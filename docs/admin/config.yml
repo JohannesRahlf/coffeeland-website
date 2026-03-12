@@ -1,0 +1,64 @@
+backend:
+  name: github
+  repo: johannesrahlf/coffeeland-website
+  branch: main
+  site_domain: johannesrahlf.github.io
+  base_url: https://api.github.com
+
+local_backend: true
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "news"
+    label: "News & Blog"
+    folder: "content/news"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "datetime" }
+      - { label: "Featured Image", name: "featured_image", widget: "image", required: false }
+      - { label: "Content", name: "body", widget: "markdown" }
+      - { label: "Tags", name: "tags", widget: "list", required: false }
+      - { label: "Categories", name: "categories", widget: "list", required: false }
+      - { label: "Publish", name: "draft", widget: "boolean", default: true }
+
+  - name: "pages"
+    label: "Pages"
+    files:
+      - file: "content/about/_index.md"
+        label: "About"
+        name: "about"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - file: "content/pilot-sites/_index.md"
+        label: "Pilot Sites"
+        name: "pilot-sites"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - file: "content/partners/_index.md"
+        label: "Partners"
+        name: "partners"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - file: "content/resources/_index.md"
+        label: "Resources"
+        name: "resources"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
+
+      - file: "content/contact/_index.md"
+        label: "Contact"
+        name: "contact"
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Content", name: "body", widget: "markdown" }
