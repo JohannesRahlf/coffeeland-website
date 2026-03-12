@@ -9,32 +9,32 @@ defaultContentLanguage = "en"
 
 [[menu.main]]
   name = "About"
-  url = "about/"
+  pageRef = "/about"
   weight = 10
 
 [[menu.main]]
   name = "Pilot Sites"
-  url = "pilot-sites/"
+  pageRef = "/pilot-sites"
   weight = 20
 
 [[menu.main]]
   name = "Partners"
-  url = "partners/"
+  pageRef = "/partners"
   weight = 30
 
 [[menu.main]]
   name = "Resources"
-  url = "resources/"
+  pageRef = "/resources"
   weight = 40
 
 [[menu.main]]
   name = "News"
-  url = "news/"
+  pageRef = "/news"
   weight = 50
 
 [[menu.main]]
   name = "Contact"
-  url = "contact/"
+  pageRef = "/contact"
   weight = 60
 
 [module]
