@@ -1,4 +1,7 @@
 baseURL = "https://CoffeeLand.no"
 title = "CoffeeLand"
-theme = "paper"
+[module]
+  [[module.imports]]
+    path = "github.com/nanxiaobei/hugo-paper"
+
 publishDir = "docs"
