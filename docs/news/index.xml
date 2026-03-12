@@ -6,7 +6,14 @@
     <description>Recent content in News on CoffeeLand</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate></lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 15:25:21 +0100</lastBuildDate>
     <atom:link href="https://johannesrahlf.github.io/coffeeland-website/news/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FundingProject funded</title>
+      <link>https://johannesrahlf.github.io/coffeeland-website/news/funding/</link>
+      <pubDate>Thu, 12 Mar 2026 15:25:21 +0100</pubDate>
+      <guid>https://johannesrahlf.github.io/coffeeland-website/news/funding/</guid>
+      <description>The project was funded.</description>
+    </item>
   </channel>
 </rss>
