@@ -1,50 +1,13 @@
-<!DOCTYPE html>
-<html lang="en-us">
-<head>
-	<meta name="generator" content="Hugo 0.123.7">
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CoffeeLand</title>
-  <link rel="stylesheet" href="/coffeeland-website/css/style.css">
-</head>
-<body>
-  <header class="navbar">
-    <div class="nav-left">
-      <h1 class="nav-brand">CoffeeLand</h1>
-    </div>
-    <nav class="nav-menu">
-      
-        <a href="#about" class="nav-link">About</a>
-      
-        <a href="#pilot-sites" class="nav-link">Pilot Sites</a>
-      
-        <a href="#partners" class="nav-link">Partners</a>
-      
-        <a href="#resources" class="nav-link">Resources</a>
-      
-        <a href="#news" class="nav-link">News</a>
-      
-        <a href="#contact" class="nav-link">Contact</a>
-      
-    </nav>
-    <div class="nav-hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
-  </header>
-
-  <main>
-    
+{{ define "main" }}
 <div class="hero" id="home">
   <div class="hero-content">
-    <h1>CoffeeLand</h1>
+    <h1>{{ .Site.Title }}</h1>
     <p class="subtitle">Building a sustainable coffee future</p>
     <a href="#about" class="btn btn-primary">Learn More</a>
   </div>
 </div>
 
-
+<!-- ABOUT -->
 <section id="about" class="section section-alt">
   <div class="container">
     <h2>About the Project</h2>
@@ -65,7 +28,7 @@
   </div>
 </section>
 
-
+<!-- PILOT SITES -->
 <section id="pilot-sites" class="section">
   <div class="container">
     <h2>Pilot Sites</h2>
@@ -99,7 +62,7 @@
   </div>
 </section>
 
-
+<!-- PARTNERS -->
 <section id="partners" class="section section-alt">
   <div class="container">
     <h2>Our Partners</h2>
@@ -130,35 +93,34 @@
   </div>
 </section>
 
-
+<!-- NEWS (Horizontal Scroll) -->
 <section id="news" class="section">
   <div class="container">
     <h2>Latest News</h2>
     <p class="section-subtitle">Recent updates and achievements</p>
     
     <div class="news-scroll">
-      
+      {{ range where .Site.Pages "Section" "news" | first 5 }}
       <article class="news-card">
-        <h3>FundingProject funded</h3>
-        <time>Mar 12, 2026</time>
-        <p>The project was funded.</p>
-        <a href="https://johannesrahlf.github.io/coffeeland-website/news/funding/" class="read-more">Read more →</a>
+        <h3>{{ .Title }}</h3>
+        {{ if .Date }}<time>{{ .Date.Format "Jan 2, 2006" }}</time>{{ end }}
+        <p>{{ .Summary }}</p>
+        <a href="{{ .Permalink }}" class="read-more">Read more →</a>
       </article>
+      {{ end }}
       
+      {{ if eq (len (where .Site.Pages "Section" "news")) 0 }}
       <article class="news-card">
-        <h3>News</h3>
+        <h3>Project Funded</h3>
         <time>Mar 12, 2026</time>
-        <p>Latest updates from the project.</p>
-        <a href="https://johannesrahlf.github.io/coffeeland-website/news/" class="read-more">Read more →</a>
+        <p>We're excited to announce that CoffeeLand has received funding to expand our research initiatives across Europe.</p>
       </article>
-      
-      
-      
+      {{ end }}
     </div>
   </div>
 </section>
 
-
+<!-- RESOURCES -->
 <section id="resources" class="section section-alt">
   <div class="container">
     <h2>Resources</h2>
@@ -195,7 +157,7 @@
   </div>
 </section>
 
-
+<!-- CONTACT -->
 <section id="contact" class="section">
   <div class="container">
     <h2>Get In Touch</h2>
@@ -221,13 +183,4 @@
     </div>
   </div>
 </section>
-
-  </main>
-
-  <footer id="footer">
-    <p>&copy; 2026 CoffeeLand. All rights reserved.</p>
-  </footer>
-
-  <script src="/coffeeland-website/js/script.js"></script>
-</body>
-</html>
+{{ end }}

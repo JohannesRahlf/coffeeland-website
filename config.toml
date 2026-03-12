@@ -1,47 +1,35 @@
 baseURL = "https://johannesrahlf.github.io/coffeeland-website/"
 languageCode = "en-us"
 title = "CoffeeLand"
-theme = "simple"
+theme = "singlepage"
 publishDir = "docs"
-
-# Menu
-[[menu.main]]
-  name = "Home"
-  url = "/"
-  weight = 1
 
 [[menu.main]]
   name = "About"
-  url = "/about/"
-  weight = 2
+  url = "#about"
+  weight = 1
 
 [[menu.main]]
   name = "Pilot Sites"
-  url = "/pilot-sites/"
-  weight = 3
+  url = "#pilot-sites"
+  weight = 2
 
 [[menu.main]]
   name = "Partners"
-  url = "/partners/"
-  weight = 4
+  url = "#partners"
+  weight = 3
 
 [[menu.main]]
   name = "Resources"
-  url = "/resources/"
-  weight = 5
+  url = "#resources"
+  weight = 4
 
 [[menu.main]]
   name = "News"
-  url = "/news/"
-  weight = 6
+  url = "#news"
+  weight = 5
 
 [[menu.main]]
   name = "Contact"
-  url = "/contact/"
-  weight = 7
-
-# Params for Ananke theme
-[params]
-  description = "CoffeeLand - Building a sustainable coffee future"
-  author = "CoffeeLand"
-  background_color_class = "bg-black"
+  url = "#contact"
+  weight = 6
