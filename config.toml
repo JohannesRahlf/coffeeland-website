@@ -9,32 +9,32 @@ defaultContentLanguage = "en"
 
 [[menu.main]]
   name = "About"
-  url = "/coffeeland-website/about/"
+  url = "about/"
   weight = 10
 
 [[menu.main]]
   name = "Pilot Sites"
-  url = "/coffeeland-website/pilot-sites/"
+  url = "pilot-sites/"
   weight = 20
 
 [[menu.main]]
   name = "Partners"
-  url = "/coffeeland-website/partners/"
+  url = "partners/"
   weight = 30
 
 [[menu.main]]
   name = "Resources"
-  url = "/coffeeland-website/resources/"
+  url = "resources/"
   weight = 40
 
 [[menu.main]]
   name = "News"
-  url = "/coffeeland-website/news/"
+  url = "news/"
   weight = 50
 
 [[menu.main]]
   name = "Contact"
-  url = "/coffeeland-website/contact/"
+  url = "contact/"
   weight = 60
 
 [module]
