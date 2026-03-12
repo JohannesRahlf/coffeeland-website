@@ -1,0 +1,4 @@
+baseURL = "https://CoffeeLand.no"
+title = "CoffeeLand"
+theme = "paper"
+publishDir = "docs"
