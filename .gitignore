@@ -1,0 +1,19 @@
+# Hugo cache and build artifacts
+.hugo_build.lock
+resources/_gen/
+public/
+
+# OS/editor files
+.DS_Store
+Thumbs.db
+*.swp
+
+# Windows alternate data stream metadata copied into WSL/git
+*Zone.Identifier
+
+# Local environment files
+.env
+.env.*
+
+# Large asset files - keep in static/images instead
+/assets/

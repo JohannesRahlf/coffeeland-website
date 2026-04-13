@@ -1,35 +1,61 @@
-baseURL = "https://johannesrahlf.github.io/coffeeland-website/"
-languageCode = "en-us"
-title = "CoffeeLand"
-theme = "singlepage"
-publishDir = "docs"
+baseURL = 'https://johannesrahlf.github.io/coffeeland-website/'
+languageCode = 'en-us'
+title = 'CoffeeLand'
+theme = 'stack'
+publishDir = 'docs'
+
+[outputs]
+  home = ['HTML', 'JSON']
+
+[params]
+  siteName = 'CoffeeLand'
+  description = 'CoffeeLand is a community-driven initiative focused on sustainable coffee production and knowledge sharing.'
+  
+  [params.sidebar]
+    enabled = true
+    avatar = 'avatar.png'
+
+  [params.article]
+    math = false
+    toc = true
+    readingTime = true
+
+  [params.comments]
+    enabled = false
+
+[pagination]
+  pagerSize = 10
+
+[taxonomies]
+  tag = 'tags'
+  category = 'categories'
 
 [[menu.main]]
-  name = "About"
-  url = "#about"
+  name = 'News'
+  url = '/news/'
   weight = 1
 
 [[menu.main]]
-  name = "Pilot Sites"
-  url = "#pilot-sites"
+  name = 'About'
+  url = '/about/'
   weight = 2
 
 [[menu.main]]
-  name = "Partners"
-  url = "#partners"
+  name = 'Pilot Sites'
+  url = '/pilot-sites/'
   weight = 3
 
 [[menu.main]]
-  name = "Resources"
-  url = "#resources"
+  name = 'Partners'
+  url = '/partners/'
   weight = 4
 
 [[menu.main]]
-  name = "News"
-  url = "/news/"
+  name = 'Resources'
+  url = '/resources/'
   weight = 5
 
 [[menu.main]]
-  name = "Contact"
-  url = "#contact"
+  name = 'Contact'
+  url = '/contact/'
   weight = 6
