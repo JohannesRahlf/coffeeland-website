@@ -93,7 +93,7 @@
   </div>
 </section>
 
-<!-- NEWS (Horizontal Scroll) -->
+<!-- NEWS (Featured) -->
 <section id="news" class="section">
   <div class="container">
     <h2>Latest News</h2>
@@ -117,6 +117,12 @@
       </article>
       {{ end }}
     </div>
+    
+    {{ if gt (len (where .Site.Pages "Section" "news")) 5 }}
+    <div class="section-footer">
+      <a href="/news/" class="btn btn-secondary">View all news →</a>
+    </div>
+    {{ end }}
   </div>
 </section>
 

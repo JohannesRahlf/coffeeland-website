@@ -1,0 +1,42 @@
+{{ define "main" }}
+<div class="section-page">
+  <div class="container">
+    <h1>{{ .Title }}</h1>
+    
+    {{ if .Params.description }}
+    <p class="section-description">{{ .Params.description }}</p>
+    {{ end }}
+
+    {{ if eq .Section "news" }}
+    <!-- News Archive -->
+    <div class="news-archive">
+      {{ if .Pages }}
+        {{ range .Pages.ByPublishDate.Reverse }}
+        <article class="news-item">
+          <div class="news-meta">
+            <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+            {{ if .Date }}<time class="news-date">{{ .Date.Format "January 2, 2006" }}</time>{{ end }}
+          </div>
+          <div class="news-excerpt">
+            {{ if .Params.summary }}
+              <p>{{ .Params.summary }}</p>
+            {{ else }}
+              <p>{{ .Summary }}</p>
+            {{ end }}
+            <a href="{{ .Permalink }}" class="read-more">Read full article →</a>
+          </div>
+        </article>
+        {{ end }}
+      {{ else }}
+        <p>No news articles yet.</p>
+      {{ end }}
+    </div>
+    {{ else }}
+    <!-- Generic section page -->
+    <div class="section-content">
+      {{ .Content }}
+    </div>
+    {{ end }}
+  </div>
+</div>
+{{ end }}
