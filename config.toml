@@ -1,27 +1,13 @@
 baseURL = 'https://johannesrahlf.github.io/coffeeland-website/'
 languageCode = 'en-us'
 title = 'CoffeeLand'
-theme = 'stack'
+theme = "ananke"
 publishDir = 'docs'
 
-[outputs]
-  home = ['HTML', 'JSON']
-
 [params]
-  siteName = 'CoffeeLand'
-  description = 'CoffeeLand is a community-driven initiative focused on sustainable coffee production and knowledge sharing.'
-  
-  [params.sidebar]
-    enabled = true
-    avatar = 'avatar.png'
-
-  [params.article]
-    math = false
-    toc = true
-    readingTime = true
-
-  [params.comments]
-    enabled = false
+  description = "CoffeeLand is a collaborative initiative for sustainable coffee production and knowledge sharing."
+  background_color_class = "bg-white"
+  text_color_class = "text-black"
 
 [pagination]
   pagerSize = 10
@@ -46,6 +32,19 @@ publishDir = 'docs'
   weight = 3
 
 [[menu.main]]
+  name = 'Partners'
+  url = '/partners/'
+  weight = 4
+
+[[menu.main]]
+  name = 'Resources'
+  url = '/resources/'
+  weight = 5
+
+[[menu.main]]
+  name = 'Contact'
+  url = '/contact/'
+  weight = 6
   name = 'Partners'
   url = '/partners/'
   weight = 4
