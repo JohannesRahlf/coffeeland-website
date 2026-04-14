@@ -1,0 +1,25 @@
+{{/*
+  Override of Ananke's GetFeaturedImage helper.
+  Difference: use urls.RelURL (not urls.AbsURL) so local dev uses local paths.
+*/}}
+
+{{ $linkToCover := "" }}
+{{ $matches := "feature,cover" }}
+
+{{ with .Params.featured_image }}
+  {{/* Static directory image path */}}
+  {{ $linkToCover = strings.Trim . "/" | urls.RelURL }}
+
+  {{/* If this is a Page Resource, prefer that */}}
+  {{ with $.Resources.GetMatch . }}
+    {{ $linkToCover = .RelPermalink }}
+  {{ end }}
+{{ else }}
+  {{ with .Resources.ByType "image" }}
+    {{ with .GetMatch (fmt.Printf "**{%s}*" $matches) }}
+      {{ $linkToCover = .RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $linkToCover }}

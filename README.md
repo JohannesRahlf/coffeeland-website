@@ -4,10 +4,10 @@ CoffeeLand is a Hugo-based website for sharing project updates, pilot site work,
 
 Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johannesrahlf.github.io/coffeeland-website/)
 
-## Stack
+## Tech Stack
 
 - Static site generator: Hugo (v0.146.0+)
-- Theme: Stack (image-centric, Git submodule)
+- Theme: Ananke
 - Image storage: Git LFS (automatic compression on upload)
 - Hosting: GitHub Pages
 - CI/CD: GitHub Actions

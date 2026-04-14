@@ -1,28 +1,29 @@
 ---
 title: "Partners"
+featured_image: "/images/Hero1.PNG"
 ---
 
 ## Our Partners
 
-CoffeeLand is a collaborative initiative with support from organizations committed to sustainable coffee production.
+CoffeeLand is a multi-institutional collaboration between Norwegian and Ethiopian research and civil society partners.
 
-### Partner Organizations
+### Project Owner
 
-#### [Partner Name 1]
-- **Expertise**: [Area of expertise]
-- **Location**: [Location]
-- **Website**: [Website URL]
+ - NIBIO — Norwegian Institute of Bioeconomy Researchcarbon mapping, and coordination
 
-#### [Partner Name 2]
-- **Expertise**: [Area of expertise]
-- **Location**: [Location]
-- **Website**: [Website URL]
+### Research Partners
 
-#### [Partner Name 3]
-- **Expertise**: [Area of expertise]
-- **Location**: [Location]
-- **Website**: [Website URL]
+- NMBU — Norwegian University of Life Sciences
+- Jimma University — College of Agriculture & Veterinary Medicineg
+- Madda Walabu University
 
-### Become a Partner
+### Civil Society Partners
+- Environment and Coffee Forest Forum (ECFF)
+- Utviklingsfondet (UF) — Development Fund of Norway
 
-We're always looking for organizations interested in collaborating on sustainable coffee initiatives. [Contact us](/contact/) to discuss partnership opportunities.
+### Associate Partners
+
+- Ethiopian Coffee and Tea Authority
+- Ethiopian National Forest Authority
+- Ministry of Agriculture, Ethiopia
+- Oromia Regional Bureau of Agriculture and Natural Resources

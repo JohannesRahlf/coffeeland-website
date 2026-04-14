@@ -1,0 +1,15 @@
+{{ define "main" }}
+  <article class="pa3 pa4-ns nested-copy-line-height partners-page">
+    <section class="cf ph3 ph4-ns ph5-l pv3 pv4-l f5 center lh-copy nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }} partners-intro">
+      {{- .Content -}}
+    </section>
+    <section class="mt4 ph3 ph4-ns ph5-l flex-ns flex-wrap justify-between partners-cards">
+      {{ range .Paginator.Pages }}
+        <div class="w-100 w-48-l mb3 relative bg-white partners-card">
+          {{ .Render "summary" }}
+        </div>
+      {{ end }}
+    </section>
+    {{ partial "pagination.html" . -}}
+  </article>
+{{ end }}

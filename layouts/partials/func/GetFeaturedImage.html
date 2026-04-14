@@ -1,0 +1,22 @@
+{{/*
+  Project override of Ananke's GetFeaturedImage helper.
+  Uses urls.RelURL (not urls.AbsURL) so logos/images resolve locally and on subpaths.
+*/}}
+
+{{ $linkToCover := "" }}
+{{ $matches := "feature,cover" }}
+
+{{ with .Params.featured_image }}
+  {{ $linkToCover = strings.Trim . "/" | urls.RelURL }}
+  {{ with $.Resources.GetMatch . }}
+    {{ $linkToCover = .RelPermalink }}
+  {{ end }}
+{{ else }}
+  {{ with .Resources.ByType "image" }}
+    {{ with .GetMatch (fmt.Printf "**{%s}*" $matches) }}
+      {{ $linkToCover = .RelPermalink }}
+    {{ end }}
+  {{ end }}
+{{ end }}
+
+{{ return $linkToCover }}

@@ -1,34 +1,27 @@
 ---
 title: "Contact"
+featured_image: "/images/Hero1.PNG"
 ---
 
 ## Get In Touch
 
-Have questions about CoffeeLand? We'd love to hear from you!
+Have questions about the CoffeeLand project? We'd love to hear from you.
 
-### Contact Information
+### Project Manager
 
-**Email**: [contact@coffeeland.example]  
-**Phone**: [Your phone number]  
-**Address**: [Your address]
+**Belachew Gizachew Zeleke**  
+Researcher, NIBIO — Norwegian Institute of Bioeconomy Research  
+Email: [belachew.gizachew@nibio.no](mailto:belachew.gizachew@nibio.no)  
+Phone: +47 414 80 161
 
-### Contact Form
+### Project Owner
 
-Please fill out the form below and we'll get back to you as soon as possible.
+**NIBIO — Norwegian Institute of Bioeconomy Research**  
+Postboks 115  
+1431 Ås, Norway  
+Email: [post@nibio.no](mailto:post@nibio.no)  
+Website: [www.nibio.no](https://www.nibio.no)
 
-[Contact form placeholder - to be implemented]
+### Media Inquiries
 
-### Follow Us
-
-Connect with us on social media:
-
-- Twitter: [@CoffeeLand](#)
-- LinkedIn: [CoffeeLand](#)
-- Facebook: [CoffeeLand](#)
-- Instagram: [@CoffeeLand](#)
-
-### Quick Links
-
-- [Report an Issue](#)
-- [Partnership Inquiries](/partners/)
-- [Research Collaboration](#)
+For press and media enquiries, please contact NIBIO's communications department via [post@nibio.no](mailto:post@nibio.no).

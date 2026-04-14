@@ -6,8 +6,16 @@ publishDir = 'docs'
 
 [params]
   description = "CoffeeLand is a collaborative initiative for sustainable coffee production and knowledge sharing."
+  site_logo = "images/LOGO.png"
   background_color_class = "bg-white"
   text_color_class = "text-black"
+  date_format = "2. January 2006"
+  mainSections = ["news"]
+  custom_css = ["css/custom.css"]
+
+  [params.contact]
+    email = 'belachew.gizachew@nibio.no'
+    phone = '+47 414 80 161'
 
 [pagination]
   pagerSize = 10
@@ -32,19 +40,6 @@ publishDir = 'docs'
   weight = 3
 
 [[menu.main]]
-  name = 'Partners'
-  url = '/partners/'
-  weight = 4
-
-[[menu.main]]
-  name = 'Resources'
-  url = '/resources/'
-  weight = 5
-
-[[menu.main]]
-  name = 'Contact'
-  url = '/contact/'
-  weight = 6
   name = 'Partners'
   url = '/partners/'
   weight = 4

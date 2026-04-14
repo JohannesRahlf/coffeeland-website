@@ -1,0 +1,25 @@
+<footer class="{{ .Site.Params.background_color_class | compare.Default "bg-black" }} bottom-0 w-100 pa3" role="contentinfo">
+  {{ $logos := slice
+    (dict "src" "images/NIBIO.png" "alt" "NIBIO")
+    (dict "src" "images/NMBU.png" "alt" "NMBU")
+    (dict "src" "images/UJ.png" "alt" "Jimma University")
+    (dict "src" "images/MWU.png" "alt" "Madda Walabu University")
+    (dict "src" "images/ECFF.png" "alt" "Environment and Coffee Forest Forum")
+    (dict "src" "images/UF.png" "alt" "Utviklingsfondet")
+  }}
+
+  <div class="footer-logos center">
+    {{ range $logos }}
+      <div class="footer-logo-item">
+        <img src="{{ .src | absURL }}" alt="{{ .alt }}" loading="lazy" decoding="async">
+      </div>
+    {{ end }}
+  </div>
+
+  <div class="flex justify-between items-center">
+    <a class="f4 fw4 hover-white white-70 dn dib-ns pv2 ph3 no-underline" href="{{ .Site.Home.Permalink }}">
+      &copy; {{ with .Site.Copyright | compare.Default .Site.Title }} {{ . | safe.HTML }} {{ now.Format "2006" }} {{ end }}
+    </a>
+    <div>{{ partials.IncludeCached "social/follow.html" . }}</div>
+  </div>
+</footer>

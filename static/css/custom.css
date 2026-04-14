@@ -1,0 +1,136 @@
+/* Compact hero: override Tachyons pv4/pv6-l padding on the hero content block */
+header > div > .tc-l {
+  padding-top: 0rem !important;
+  padding-bottom: 3em !important;
+}
+
+
+
+/* Partners page: wider intro text area and more compact cards */
+.partners-page .partners-intro {
+  max-width: 72rem;
+}
+
+.partners-page .partners-cards {
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.partners-page .partners-intro p,
+.partners-page .partners-intro li {
+  font-size: 0.95rem;
+}
+
+.partners-page .partners-card article {
+  border-radius: 0.4rem;
+}
+
+.partners-page .partners-card .img {
+  max-height: 140px;
+  width: 100%;
+  object-fit: contain;
+}
+
+/* Wider global page margins (Ananke uses Tachyons spacing classes) */
+.ph3 {
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
+}
+
+@media screen and (min-width: 30em) {
+  .ph4-ns {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .ph5-l {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+}
+
+.footer-logos {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.6rem;
+  max-width: 72rem;
+  margin: 0 auto 1rem;
+}
+
+.footer-logo-item {
+  background: rgba(255, 255, 255, 0.92);
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 64px;
+  padding: 0.45rem;
+}
+
+.footer-logo-item img {
+  max-height: 44px;
+  width: 100%;
+  object-fit: contain;
+}
+
+@media screen and (min-width: 30em) {
+  .footer-logos {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media screen and (min-width: 60em) {
+  .footer-logos {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+}
+
+/* Global content alignment: float text blocks to the left on all pages */
+main .measure-wide,
+main .measure-wide-l,
+main article.mw7,
+main article.mw8 {
+  margin-left: 0 !important;
+  margin-right: auto !important;
+}
+
+main .tc-l {
+  text-align: left !important;
+}
+
+/* Landing page: match text and card margins to top-level pages */
+body main > article.measure-wide {
+  max-width: 72rem !important;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
+}
+
+body main > div.w-70-ns {
+  width: 100% !important;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
+}
+
+@media screen and (min-width: 30em) {
+  body main > article.measure-wide,
+  body main > div.w-70-ns {
+    padding-left: 1.25rem !important;
+    padding-right: 1.25rem !important;
+  }
+}
+
+@media screen and (min-width: 60em) {
+  body main > article.measure-wide,
+  body main > div.w-70-ns {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+}

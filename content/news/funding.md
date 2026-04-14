@@ -1,27 +1,39 @@
 +++
-title = 'CoffeeLand Project Funded'
-date = 2026-03-12T15:25:21+01:00
+title = 'CoffeeLand Receives Funding from the Research Council of Norway'
+date = 2026-01-26T00:00:00+01:00
 draft = false
 author = "CoffeeLand Team"
-summary = "We're excited to announce that CoffeeLand has received funding to expand our research initiatives across Europe."
+summary = "CoffeeLand has been funded by the Research Council of Norway to optimize carbon, soil health, and yield in Ethiopian coffee-forest systems."
 +++
 
-## Exciting News!
+We are delighted to announce that the CoffeeLand project has been awarded **NOK 12.5 million** in funding from the **Research Council of Norway** (project number 358392, KSP25) for the period **2026–2029**.
 
-We're thrilled to announce that the CoffeeLand project has successfully secured funding to support our mission of advancing sustainable coffee production practices.
+The project — formally titled *Optimizing Carbon, Soil Health and Yield in Coffee-Forest Systems as a Climate-Smart Land Management in Ethiopia* — is led by **NIBIO** (Norwegian Institute of Bioeconomy Research) in collaboration with partners from Norway and Ethiopia.
 
-### What This Means
+## What CoffeeLand Will Do
 
-This funding will enable us to:
+The project addresses the urgent need to protect and sustainably manage Ethiopia's unique coffee-forest systems, which face mounting pressure from deforestation, land degradation, and climate change. Using AI, machine learning, and satellite remote sensing (Sentinel, GEDI), combined with extensive field research, the project will:
 
-- **Expand Research** — Conduct deeper studies across our pilot sites in Europe
-- **Scale Initiatives** — Bring our programs to new regions and communities
-- **Support Partners** — Provide resources to our partner organizations
-- **Share Knowledge** — Develop and distribute educational materials and best practices
-- **Strengthen Communities** — Support coffee farming communities directly
+- Map the extent, structure, and carbon stocks of Ethiopian coffee-forest landscapes
+- Assess how shade tree diversity and density affect soil health and coffee yield
+- Develop novel AI-based carbon monitoring methods
+- Explore pathways for integrating coffee-forests into carbon markets and REDD+ initiatives
 
-### Next Steps
+## Our Partners
 
-We will be announcing detailed plans for the expanded program in the coming weeks. Stay tuned for updates on new pilot sites and initiatives!
+CoffeeLand brings together six partner institutions:
 
-Thank you to all our partners, supporters, and the coffee farming community for making this possible.
+- **NIBIO** — Norwegian Institute of Bioeconomy Research (project lead)
+- **NMBU** — Norwegian University of Life Sciences
+- **Jimma University** — College of Agriculture & Veterinary Medicine, Ethiopia
+- **Madda Walabu University**, Ethiopia
+- **Environment and Coffee Forest Forum (ECFF)**, Ethiopia
+- **Utviklingsfondet (UF)** — Development Fund of Norway
+
+## Looking Ahead
+
+The project officially started in January 2026. Our first milestones include establishing research teams, setting up field plots in Jimma and Bale regions of Ethiopia, and developing the project's data management and dissemination plans.
+
+We are committed to open science: all datasets, code, and publications will be made openly available through repositories such as Zenodo and GitHub.
+
+Stay tuned for updates as the work gets underway!
