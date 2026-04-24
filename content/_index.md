@@ -9,4 +9,4 @@ CoffeeLand is a collaborative research project between Ethiopian and Norwegian i
 
 Funded by the Research Council of Norway (2026–2029), the project combines AI, satellite remote sensing, and field research to optimize carbon sequestration, soil health, and coffee yield in Ethiopia's unique coffee-forest landscapes.
 
-[Learn more about the project](/about/) | [Meet our partners](/partners/)
+[Learn more about the project](/coffeeland-website/about/) | [Meet our partners](/coffeeland-website/partners/)
