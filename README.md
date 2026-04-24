@@ -4,6 +4,12 @@ CoffeeLand is a Hugo-based website for sharing project updates, pilot site work,
 
 Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johannesrahlf.github.io/coffeeland-website/)
 
+## For Partners: Editing Content
+
+Partners can edit content through GitHub's web interface.
+
+For step-by-step instructions on adding news, uploading images, and submitting changes for approval, see [CONTRIBUTING.md](./CONTRIBUTING.md).
+
 ## Tech Stack
 
 - Static site generator: Hugo (v0.146.0+)
@@ -22,11 +28,6 @@ Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johanne
 - `content/contact/_index.md`: Contact page
 - `static/images/`: Gallery images (Git LFS tracked)
 
-## For Partners: Editing Content
-
-Partners can edit content through GitHub's web interface.
-
-For step-by-step instructions on adding news, uploading images, and submitting changes for approval, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Local Development
 
