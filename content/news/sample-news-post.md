@@ -29,15 +29,7 @@ Add one short paragraph with the main outcome or relevance for the project.
 
 Upload your image to `/static/images/`, then insert it like this:
 
-```markdown
 ![Short description of the image](/images/your-image-file.jpg)
-```
-
-Example:
-
-```markdown
-![Project workshop participants in Jimma](/images/workshop-jimma-april-2026.jpg)
-```
 
 ## Next steps
 

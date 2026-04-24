@@ -4,6 +4,16 @@ Thank you for contributing to CoffeeLand. This guide is for project partners usi
 
 You do not need to install any software or use the command line.
 
+## Easiest Option: Submit a News Form
+
+If you are not comfortable editing files, use the News Submission Form:
+
+- Open: https://github.com/johannesrahlf/coffeeland-website/issues/new?template=news-submission.yml
+- Fill in the form fields
+- Submit the issue
+
+The repository owner will review your submission and publish it on the website.
+
 ## How Publishing Works
 
 All changes should be submitted for review before they are published.

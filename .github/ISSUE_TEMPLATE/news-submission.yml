@@ -1,0 +1,71 @@
+name: News submission
+description: Submit a news update for the CoffeeLand website
+title: "News: "
+labels:
+  - news-submission
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form to submit a news update.
+
+        The repository owner will review your submission and publish it on the website.
+
+  - type: input
+    id: headline
+    attributes:
+      label: News headline
+      description: Short and clear title for the post
+      placeholder: Example: CoffeeLand Kick-Off Meeting Successfully Completed
+    validations:
+      required: true
+
+  - type: input
+    id: date
+    attributes:
+      label: Date of event
+      description: Use format YYYY-MM-DD
+      placeholder: 2026-04-24
+    validations:
+      required: true
+
+  - type: input
+    id: author
+    attributes:
+      label: Author or institution
+      placeholder: CoffeeLand Team
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Short summary
+      description: One or two sentences for the news feed preview
+      placeholder: Write a short summary.
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Full news content
+      description: Add the full text for the post
+      placeholder: Write the full news update here.
+    validations:
+      required: true
+
+  - type: textarea
+    id: images
+    attributes:
+      label: Images (optional)
+      description: Drag and drop images directly into this issue, or paste image links
+      placeholder: Add image files or links.
+
+  - type: checkboxes
+    id: consent
+    attributes:
+      label: Confirmation
+      options:
+        - label: I confirm this content can be published on the CoffeeLand website.
+          required: true
