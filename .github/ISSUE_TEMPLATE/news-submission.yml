@@ -53,20 +53,9 @@ body:
     validations:
       required: true
 
-  - type: upload
-    id: images
+  - type: textarea
+    id: images_or_links
     attributes:
-      label: Upload images (optional)
-      description: Drag and drop image files or supporting documents here.
-    validations:
-      required: false
-      accept: ".png,.jpg,.jpeg,.gif,.svg,.webp,.pdf,.docx"
-
-  - type: checkboxes
-    id: consent
-    attributes:
-      label: Confirmation
-      description: Please confirm the content is ready to be reviewed for publication.
-      options:
-        - label: I confirm this content can be published on the CoffeeLand website.
-          required: true
+      label: Images or file links (optional)
+      description: Paste image links, file names, or note that you will send images separately.
+      placeholder: Example: /images/kick-off-group-photo.jpg or "I will email 2 photos to Johannes"

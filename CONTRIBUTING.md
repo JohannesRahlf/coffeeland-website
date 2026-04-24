@@ -8,11 +8,9 @@ You do not need to install any software or use the command line.
 
 If you are not comfortable editing files, use the News Submission Form:
 
-- Open: https://github.com/johannesrahlf/coffeeland-website/issues/new/choose
+- Open: https://github.com/johannesrahlf/coffeeland-website/issues/new?template=news-submission.yml
 - Fill in the form fields
 - Submit the issue
-
-Then choose **News submission**.
 
 The repository owner will review your submission and publish it on the website.
 
