@@ -2,7 +2,7 @@ baseURL = 'https://johannesrahlf.github.io/coffeeland-website/'
 languageCode = 'en-us'
 title = 'CoffeeLand'
 theme = "ananke"
-publishDir = 'docs'
+publishDir = 'public'
 
 [params]
   description = "CoffeeLand is a collaborative initiative for sustainable coffee production and knowledge sharing."
