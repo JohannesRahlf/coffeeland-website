@@ -1,8 +1,6 @@
 name: News submission
 description: Submit a news update for the CoffeeLand website
 title: "News: "
-labels:
-  - news-submission
 body:
   - type: markdown
     attributes:
@@ -55,17 +53,20 @@ body:
     validations:
       required: true
 
-  - type: textarea
+  - type: upload
     id: images
     attributes:
-      label: Images (optional)
-      description: Drag and drop images directly into this issue, or paste image links
-      placeholder: Add image files or links.
+      label: Upload images (optional)
+      description: Drag and drop image files or supporting documents here.
+    validations:
+      required: false
+      accept: ".png,.jpg,.jpeg,.gif,.svg,.webp,.pdf,.docx"
 
   - type: checkboxes
     id: consent
     attributes:
       label: Confirmation
+      description: Please confirm the content is ready to be reviewed for publication.
       options:
         - label: I confirm this content can be published on the CoffeeLand website.
           required: true

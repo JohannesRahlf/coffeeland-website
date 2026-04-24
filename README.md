@@ -12,7 +12,7 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 
 ## Tech Stack
 
-- Static site generator: Hugo (v0.146.0+)
+- Static site generator: Hugo (v0.160.0+)
 - Theme: Ananke
 - Image storage: Git LFS (automatic compression on upload)
 - Hosting: GitHub Pages
@@ -31,7 +31,7 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 
 ## Local Development
 
-1. Install Hugo (extended, v0.146.0 or newer) and Go.
+1. Install Hugo (extended, v0.160.0 or newer) and Go.
 2. Install Git LFS:
    ```bash
    git lfs install
@@ -75,7 +75,7 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 - Pull LFS files: `git lfs pull`
 
 **Build failing?**
-- Check Hugo version: `hugo version` (must be v0.146.0+)
+- Check Hugo version: `hugo version` (must be v0.160.0+)
 - Check GitHub Actions tab for error details
 
 **Want to edit locally?**
