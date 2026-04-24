@@ -17,4 +17,5 @@ Thumbs.db
 
 # Large asset files - keep in static/images instead
 /assets/
-docs/
+docs/*
+!docs/.nojekyll

@@ -2,6 +2,10 @@
 {{- $isRemote := or (hasPrefix $dest "http://") (hasPrefix $dest "https://") (hasPrefix $dest "//") (hasPrefix $dest "data:") -}}
 {{- $src := $dest -}}
 {{- if not $isRemote -}}
-  {{- $src = relURL $dest -}}
+  {{- $localDest := $dest -}}
+  {{- if hasPrefix $localDest "/" -}}
+    {{- $localDest = strings.TrimPrefix "/" $localDest -}}
+  {{- end -}}
+  {{- $src = absURL $localDest -}}
 {{- end -}}
 <img src="{{ $src | safeURL }}" alt="{{ .Text }}"{{ with .Title }} title="{{ . }}"{{ end }}>
