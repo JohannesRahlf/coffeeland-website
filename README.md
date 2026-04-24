@@ -24,35 +24,9 @@ Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johanne
 
 ## For Partners: Editing Content
 
-Partners can edit news and upload images directly via **GitHub's web interface** (no technical knowledge required):
+Partners can edit content through GitHub's web interface.
 
-### Add a News Post
-1. Go to https://github.com/johannesrahlf/coffeeland-website
-2. Navigate to `content/news/`
-3. Click **"Add file"** → **"Create new file"**
-4. Name it `my-post.md` (use a short title)
-5. Write your post in Markdown:
-   ```markdown
-   +++
-   title = "Post Title"
-   date = 2026-04-13
-   draft = false
-   author = "Your Name"
-   summary = "Brief summary shown in feed"
-   +++
-
-   Your content here...
-   ```
-6. Click **"Commit changes"** → post goes live immediately
-
-### Upload Images to Gallery
-1. Navigate to `static/images/`
-2. Click **"Add file"** → **"Upload files"**
-3. Drag & drop images (any size — auto-compresses)
-4. Click **"Commit changes"**
-5. Images appear in gallery automatically
-
-**Note:** Images are automatically compressed; full-size uploads are welcome.
+For step-by-step instructions on adding news, uploading images, and submitting changes for approval, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Local Development
 
