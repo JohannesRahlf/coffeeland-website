@@ -1,6 +1,6 @@
 +++
 title = "CoffeeLand"
-description = "Building sustainable coffee futures"
+description = "Climate-smart Solutions for Coffee-Forest Systems in Ethiopia"
 featured_image = "/images/Hero1.PNG"
 featured_image_class = "contain bg-bottom"
 +++
