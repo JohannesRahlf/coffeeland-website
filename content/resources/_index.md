@@ -33,6 +33,10 @@ The project will produce targeted policy briefs for decision-makers in Ethiopia 
 
 A full Data Management Plan (DMP) has been developed for the project in accordance with Research Council of Norway requirements, ensuring long-term preservation and accessibility of all research data.
 
+### Internal Resources
+
+[Data Sharing Platform](https://example.com/data-sharing-platform) (internal use)
+
 ### Project Documents
 
 - **Application number**: ES759284
