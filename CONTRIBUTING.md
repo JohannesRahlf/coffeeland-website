@@ -1,32 +1,23 @@
 # Contributing to CoffeeLand Website
 
-Thank you for contributing to CoffeeLand. This guide is for project partners using GitHub in the web browser.
+Thank you for contributing to CoffeeLand. This guide is for project partners using Pages CMS in the browser.
 
 You do not need to install any software or use the command line.
 
-## Recommended Option: Use Pages CMS
+## Edit Content with Pages CMS
 
-For a simple editor UI (no manual Markdown formatting), use Pages CMS:
+Pages CMS is the supported editor for this site.
 
 1. Open https://app.pagescms.org/
 2. Sign in with GitHub
 3. Open this repository
 4. Edit entries in **News**, **Partners**, or **Pilot Sites**
-5. Commit to a new branch and open a pull request
+5. Save the change
 
 Notes:
 - Uploaded images are stored in `static/images`
 - Image paths in content are written as `/images/...`
-
-## Easiest Option: Submit a News Form
-
-If you are not comfortable editing files, use the News Submission Form:
-
-- Open: https://github.com/johannesrahlf/coffeeland-website/issues/new?template=news-submission.yml
-- Fill in the form fields
-- Submit the issue
-
-The repository owner will review your submission and publish it on the website.
+- Whether the change goes to a pull request or directly to `main` depends on GitHub branch protection
 
 ## How Publishing Works
 
@@ -34,7 +25,11 @@ All changes should be submitted for review before they are published.
 
 This repository is intended to use a pull-request-only workflow.
 
+Pages CMS does not force that workflow on its own.
+
 If GitHub branch protection is enabled on `main`, direct edits to `main` are blocked and changes must be reviewed before merge.
+
+If branch protection is not enabled, or if the signed-in account can bypass the rule, Pages CMS may push directly to `main`.
 
 Please do not commit directly to the `main` branch. Instead:
 
@@ -59,81 +54,24 @@ To enforce PR-only edits in GitHub:
 
 This repository includes a root [`.github/CODEOWNERS`](https://github.com/johannesrahlf/coffeeland-website/blob/main/.github/CODEOWNERS) file so owner review can be required.
 
-## Add a News Post
+## Content Areas
 
-1. Go to the [news folder](https://github.com/johannesrahlf/coffeeland-website/tree/main/content/news)
-2. Open the sample file: [content/news/sample-news-post.md](https://github.com/johannesrahlf/coffeeland-website/blob/main/content/news/sample-news-post.md)
-3. Click **"Copy raw file"** or copy the contents into a new file
-4. Go back to the [news folder](https://github.com/johannesrahlf/coffeeland-website/tree/main/content/news)
-5. Click **"Add file"** → **"Create new file"**
-6. Name it `my-post.md`
-7. Paste the sample content and update it for your news item:
-   ```markdown
-   ---
-   title: "Your Post Title"
-   date: 2026-04-24T00:00:00+00:00
-   draft: false
-   author: "Your Name"
-   summary: "Brief summary for the news feed"
-   ---
+Use these collections in Pages CMS:
 
-   Your post content here...
-   ```
-8. Select **"Create a new branch for this commit"**
-9. Click **"Propose changes"**
-10. Open a pull request for review
+- **News** for project updates and announcements
+- **Partners** for partner profile pages
+- **Pilot Sites** for pilot site pages
 
-Notes:
-- Use a short, clear file name such as `workshop-update.md`
-- Add one short summary so the news page shows a useful preview
-- Set `draft = false` when the post is ready to publish
-- Do not edit the sample file itself; create a new file for each post
+For images:
 
-## Upload Images
-
-1. Go to the [images folder](https://github.com/johannesrahlf/coffeeland-website/tree/main/static/images)
-2. Click **"Add file"** → **"Upload files"**
-3. Drag and drop your image files
-4. Select **"Create a new branch for this commit"**
-5. Click **"Propose changes"**
-6. Open a pull request for review
-
-To show an image inside a news post or page, add this line in the Markdown text:
-
-```markdown
-![Short description of the image](/images/your-image-file.jpg)
-```
-
-Example:
-
-```markdown
-![Field visit in Bale](/images/field-visit-bale.jpg)
-```
-
-Notes:
-- Upload the image first, then add it to the page or news post
-- Use short file names with lowercase letters and hyphens when possible
-- Replace the alt text with a short description of what the image shows
-
-## Edit an Existing Page
-
-1. Open the page file you want to change in GitHub
-2. Click the pencil icon to edit
-3. Update the text
-4. Select **"Create a new branch for this commit"**
-5. Click **"Propose changes"**
-6. Open a pull request for review
-
-Main pages are stored here:
-- About: [content/about/_index.md](https://github.com/johannesrahlf/coffeeland-website/blob/main/content/about/_index.md)
-- Contact: [content/contact/_index.md](https://github.com/johannesrahlf/coffeeland-website/blob/main/content/contact/_index.md)
-- Resources: [content/resources/_index.md](https://github.com/johannesrahlf/coffeeland-website/blob/main/content/resources/_index.md)
+- Upload images through the CMS
+- Use short filenames with lowercase letters and hyphens when possible
+- Stored images are served from `/images/...`
 
 ## Good to Know
 
 - Changes are published only after the repository owner approves and merges the pull request
 - Keep titles and summaries short and clear
-- Use plain text or simple Markdown
 - If you are unsure where something belongs, ask the project owner before opening the pull request
 
 ---
