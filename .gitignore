@@ -19,3 +19,6 @@ Thumbs.db
 /assets/
 docs/*
 !docs/.nojekyll
+
+# adminisrative files
+contacts.txt
