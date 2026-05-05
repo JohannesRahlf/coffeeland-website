@@ -8,13 +8,17 @@ Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johanne
 
 Partners use Pages CMS for editing content:
 
-- Open: https://app.pagescms.org/
+- Open: https://app.pagescms.org/johannesrahlf/coffeeland-website/pages-edits/
 - Sign in with GitHub and open this repository
 - Switch to the `pages-edits` branch (or create it if it does not exist)
 - Edit content collections (News, Partners, Pilot Sites)
 - Save changes to the `pages-edits` branch
 - A pull request to `main` is created or updated automatically
 - Wait for repository owner review and merge
+
+Required once by repository owner:
+- Ensure branch `pages-edits` exists on GitHub
+- In Settings -> Actions -> General, set Workflow permissions to **Read and write**
 
 For step-by-step instructions on adding news, uploading images, and submitting changes for approval, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 

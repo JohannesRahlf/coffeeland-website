@@ -38,7 +38,11 @@ The website is only published after approved changes are merged into `main`.
 
 ## Repository Owner Setup (One-time)
 
-No additional setup required. The `pages-edits` branch is dedicated to Pages CMS, and a GitHub Action automatically creates/updates pull requests from it.
+Required one-time setup for automatic pull requests:
+
+1. Create branch `pages-edits` from `main` in GitHub
+2. Ensure `.github/workflows/auto-pr.yml` is present on `main`
+3. Open **Settings -> Actions -> General** and set **Workflow permissions** to **Read and write**
 
 To further enforce safety:
 1. Keep GitHub branch protection enabled on `main` (require PR, approvals, code owner review)
