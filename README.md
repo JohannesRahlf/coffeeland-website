@@ -66,7 +66,12 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 
 - **Partners**: Can edit `content/news/` and upload to `static/images/`
 - **Only Johannes**: Can modify configuration, theme, and workflows
-- Protected by CODEOWNERS file
+- Protected by [.github/CODEOWNERS](./.github/CODEOWNERS)
+- For PR-only publishing control, enable GitHub branch protection on `main` with:
+   - **Require a pull request before merging**
+   - **Require approvals**
+   - **Require review from Code Owners**
+   - Optional: **Restrict who can push to matching branches**
 
 ## Maintenance
 

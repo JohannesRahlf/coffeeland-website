@@ -71,4 +71,12 @@ content:
           format: markdown
 
 settings:
-  branch: main
+  content:
+    merge: true
+  commit:
+    identity: user
+    templates:
+      create: "Create {path} via Pages CMS"
+      update: "Update {path} via Pages CMS"
+      delete: "Delete {path} via Pages CMS"
+      rename: "Rename {oldPath} to {newPath} via Pages CMS"

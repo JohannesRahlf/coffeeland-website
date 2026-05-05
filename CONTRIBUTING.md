@@ -32,6 +32,10 @@ The repository owner will review your submission and publish it on the website.
 
 All changes should be submitted for review before they are published.
 
+This repository is intended to use a pull-request-only workflow.
+
+If GitHub branch protection is enabled on `main`, direct edits to `main` are blocked and changes must be reviewed before merge.
+
 Please do not commit directly to the `main` branch. Instead:
 
 1. Make your change in GitHub
@@ -41,6 +45,19 @@ Please do not commit directly to the `main` branch. Instead:
 5. Wait for the repository owner to review and merge it
 
 The website is only published after approved changes are merged into `main`.
+
+## Repository Owner Setup
+
+To enforce PR-only edits in GitHub:
+
+1. Open repository **Settings** → **Branches** or **Rules**
+2. Add a rule for the `main` branch
+3. Enable **Require a pull request before merging**
+4. Enable **Require approvals**
+5. Enable **Require review from Code Owners**
+6. Optionally enable **Restrict who can push to matching branches**
+
+This repository includes a root [`.github/CODEOWNERS`](https://github.com/johannesrahlf/coffeeland-website/blob/main/.github/CODEOWNERS) file so owner review can be required.
 
 ## Add a News Post
 
