@@ -1,14 +1,12 @@
 ---
-title: "NIBIO"
-description: "NIBIO is the project owner and lead institution for CoffeeLand."
-featured_image: "images/NIBIO.png"
-header_image: "images/Hero2.png"
-featured_image_class: "contain bg-center"
+title: NIBIO
+featured_image: /images/NIBIO.png
+header_image: images/Hero2.png
+featured_image_class: contain bg-center
 ---
-
 NIBIO is the **project owner** and lead institution for CoffeeLand.
 
-<!--more-->
+
 
 #### NIBIO -- Norwegian Institute of Bioeconomy Research
 
@@ -36,17 +34,16 @@ As project owner, NIBIO is responsible for:
 
 ## Personnel
 
-| ![Belachew Gizachew Zeleke](/coffeeland-website/images/NIBIO_Bela.png) | ![Ana Aza](/coffeeland-website/images/NIBIO_Ana.png) | ![Christian Mohr](/coffeeland-website/images/NIBIO_Christian.png) |
-| --- | --- | --- |
-| [Belachew Gizachew Zeleke](https://www.nibio.no/ansatte/belachew-gizachew-zeleke) | [Ana Aza](https://www.nibio.no/ansatte/ana-aza) | [Christian Mohr](https://www.nibio.no/ansatte/christian-mohr) |
-
-| ![Diress Alemu](/coffeeland-website/images/NIBIO_Diress.png) | ![Johannes Rahlf](/coffeeland-website/images/NIBIO_Johannes.png) | ![Eva A. Haugen Johnson](/coffeeland-website/images/NIBIO_Eva.png) |
-| --- | --- | --- |
-| [Diress Alemu](https://www.nibio.no/ansatte/diress-alemu) | [Johannes Rahlf](https://www.nibio.no/ansatte/johannes-rahlf) | [Eva A. Haugen Johnson](https://www.nibio.no/ansatte/eva-a-haugen-johnson) |
-
+- [Belachew Gizachew Zeleke](https://www.nibio.no/ansatte/belachew-gizachew-zeleke)
+- [Ana Aza](https://www.nibio.no/ansatte/ana-aza)
+- [Christian Mohr](https://www.nibio.no/ansatte/christian-mohr)
+- [Diress Alemu](https://www.nibio.no/ansatte/diress-alemu)
+- [Johannes Rahlf](https://www.nibio.no/ansatte/johannes-rahlf)
+- [Eva A. Haugen Johnson](https://www.nibio.no/ansatte/eva-a-haugen-johnson)
 
 ## Key Contacts
 
 ### Project Manager
 
 - [Belachew Gizachew Zeleke](https://www.nibio.no/ansatte/belachew-gizachew-zeleke)
+
