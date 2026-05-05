@@ -4,6 +4,20 @@ Thank you for contributing to CoffeeLand. This guide is for project partners usi
 
 You do not need to install any software or use the command line.
 
+## Recommended Option: Use Pages CMS
+
+For a simple editor UI (no manual Markdown formatting), use Pages CMS:
+
+1. Open https://app.pagescms.org/
+2. Sign in with GitHub
+3. Open this repository
+4. Edit entries in **News**, **Partners**, or **Pilot Sites**
+5. Commit to a new branch and open a pull request
+
+Notes:
+- Uploaded images are stored in `static/images`
+- Image paths in content are written as `/images/...`
+
 ## Easiest Option: Submit a News Form
 
 If you are not comfortable editing files, use the News Submission Form:
@@ -38,13 +52,13 @@ The website is only published after approved changes are merged into `main`.
 6. Name it `my-post.md`
 7. Paste the sample content and update it for your news item:
    ```markdown
-   +++
-   title = "Your Post Title"
-   date = 2026-04-24T00:00:00+00:00
-   draft = false
-   author = "Your Name"
-   summary = "Brief summary for the news feed"
-   +++
+   ---
+   title: "Your Post Title"
+   date: 2026-04-24T00:00:00+00:00
+   draft: false
+   author: "Your Name"
+   summary: "Brief summary for the news feed"
+   ---
 
    Your post content here...
    ```

@@ -1,15 +1,14 @@
-+++
-title = "Sample News Post"
-date = 2026-04-24T00:00:00+00:00
-draft = true
-author = "Your Name"
-summary = "Replace this with a short summary for the news feed."
-
-[build]
-render = "never"
-list = "never"
-publishResources = false
-+++
+---
+title: "Sample News Post"
+date: 2026-04-24T00:00:00+00:00
+draft: true
+author: "Your Name"
+summary: "Replace this with a short summary for the news feed."
+build:
+  render: "never"
+  list: "never"
+  publishResources: false
+---
 
 Use this file as a template for new news posts.
 

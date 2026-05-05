@@ -8,6 +8,12 @@ Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johanne
 
 Partners can edit content through GitHub's web interface.
 
+Partners can also use Pages CMS for a form-based editor UI:
+
+- Open: https://app.pagescms.org/
+- Sign in with GitHub and open this repository
+- Edit content collections (News, Partners, Pilot Sites)
+
 For step-by-step instructions on adding news, uploading images, and submitting changes for approval, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## Tech Stack

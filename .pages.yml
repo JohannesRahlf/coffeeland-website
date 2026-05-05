@@ -1,0 +1,74 @@
+media:
+  input: static/images
+  output: /images
+
+content:
+  - name: news
+    label: News
+    type: collection
+    path: content/news
+    view:
+      fields: [title, date, author, draft]
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: date
+        type: date
+      - name: draft
+        type: boolean
+        default: false
+      - name: author
+        type: string
+      - name: summary
+        type: text
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: partners
+    label: Partners
+    type: collection
+    path: content/partners
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: featured_image
+        type: image
+      - name: header_image
+        type: image
+      - name: featured_image_class
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          format: markdown
+
+  - name: pilot_sites
+    label: Pilot Sites
+    type: collection
+    path: content/pilot-sites
+    view:
+      fields: [title]
+    fields:
+      - name: title
+        type: string
+        required: true
+      - name: description
+        type: text
+      - name: featured_image
+        type: image
+      - name: body
+        label: Body
+        type: rich-text
+        options:
+          format: markdown
+
+settings:
+  branch: main
