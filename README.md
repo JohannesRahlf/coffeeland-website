@@ -6,13 +6,15 @@ Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johanne
 
 ## For Partners: Editing Content
 
-Partners can edit content through GitHub's web interface.
-
-Partners can also use Pages CMS for a form-based editor UI:
+Partners use Pages CMS for editing content:
 
 - Open: https://app.pagescms.org/
 - Sign in with GitHub and open this repository
+- Switch to the `pages-edits` branch (or create it if it does not exist)
 - Edit content collections (News, Partners, Pilot Sites)
+- Save changes to the `pages-edits` branch
+- A pull request to `main` is created or updated automatically
+- Wait for repository owner review and merge
 
 For step-by-step instructions on adding news, uploading images, and submitting changes for approval, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
@@ -64,10 +66,10 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 
 ## Access Control
 
-- **Partners**: Can edit `content/news/` and upload to `static/images/`
+- **Partners**: Edit content through Pages CMS
 - **Only Johannes**: Can modify configuration, theme, and workflows
 - Protected by [.github/CODEOWNERS](./.github/CODEOWNERS)
-- For PR-only publishing control, enable GitHub branch protection on `main` with:
+- Pages CMS does not enforce PR-only publishing by itself. For PR-only control, enable GitHub branch protection on `main` with:
    - **Require a pull request before merging**
    - **Require approvals**
    - **Require review from Code Owners**

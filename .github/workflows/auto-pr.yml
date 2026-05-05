@@ -1,0 +1,29 @@
+name: Auto-create or update PR from pages-edits
+
+on:
+  push:
+    branches:
+      - pages-edits
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  create-or-update-pr:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Create or update pull request
+        uses: peter-evans/create-pull-request@v5
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: Update from pages-edits
+          title: "Review content changes"
+          body: |
+            Automated pull request from `pages-edits` branch.
+            
+            Review changes and merge when ready.
+          branch: pages-edits
+          base: main
+          delete-branch: false
+          labels: "content"
