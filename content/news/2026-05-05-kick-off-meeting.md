@@ -1,7 +1,7 @@
 ---
-title: Kick-off meeting
+title: testentry
 date: 2026-04-24
-draft: true
+draft: false
 author: Johannes Rahlf
 summary: The Kick-off meeting was conducted.
 ---
