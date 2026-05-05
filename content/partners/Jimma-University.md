@@ -42,12 +42,3 @@ As Jimma University continues through a transformative phase of institutional gr
 
 - **Communication Officer**: Dr. Wasihun Abate - washassen@gmail.com
 - **IT Person**: Ashenafi Adere - ashenafi.adere@ju.edu.et
-
-## Website Access
-
-The following individuals need access to the website:
-
-- **Dr. Jemal Abafita** – President, Jimma University - jemal.abafita@ju.edu.et
-- **Professor Muluemebet Abera** – Vice President for Research and Partnership - muluemebet.abera@ju.edu.et
-- **Dr. Solomon Tulu** – Dean, College of Agriculture and Veterinary Medicine - Solomon.tulu@ju.edu.et
-- **Dr. Bayu Dume** – Postgraduate and Research Coordinator - bayu.dume@ju.edu.et

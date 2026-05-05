@@ -47,11 +47,3 @@ MWU has extensive experience in implementing research, development, and communit
 | Medhanit Bekele | Lecturer | Researcher contributing to WP-3 | Medilv2014@gmail.com |
 | Kefa Faye | PhD Fellow | Student & Researcher contributing to WP-1 & WP-2 | kefafeye8@gmail.com |
 | Dejene Worku | PhD Fellow | Student & Researcher contributing mainly to WP-2, and WP-1 & WP-3 | dworkud@gmail.com, dejene.worku@mwu.edu.et |
-
-## Website Access
-
-The following individuals need access to the website:
-
-- **Dr. Berhanemeskel Tena** – President of Madda Walabu University - bmeskelbtena2@gmail.com
-- **Dr. Bezabih Wondimu** – Vice President for Academic & Research Affairs - bezabih19@gmail.com
-- **Dr. Alemayehu Abate** – Internationalization & Research Partnership Directorate Director - aabate50@gmail.com
