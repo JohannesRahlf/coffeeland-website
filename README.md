@@ -8,17 +8,11 @@ Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johanne
 
 Partners use Pages CMS for editing content:
 
-- Open: https://app.pagescms.org/johannesrahlf/coffeeland-website/pages-edits/
+- Open: https://app.pagescms.org/johannesrahlf/coffeeland-website/main/
 - Sign in with GitHub and open this repository
-- Switch to the `pages-edits` branch (or create it if it does not exist)
+- Add images to `static/images/`
 - Edit content collections (News, Partners, Pilot Sites)
-- Save changes to the `pages-edits` branch
-- A pull request to `main` is created or updated automatically
-- Wait for repository owner review and merge
-
-Required once by repository owner:
-- Ensure branch `pages-edits` exists on GitHub
-- In Settings -> Actions -> General, set Workflow permissions to **Read and write**
+- Save changes
 
 For step-by-step instructions on adding news, uploading images, and submitting changes for approval, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
@@ -58,8 +52,14 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 ## Build & Deploy
 
 - Local build: `hugo --minify`
-- Production: GitHub Actions automatically builds on every push to `main`
-- Deployed to: GitHub Pages (live within seconds)
+- Production deploy: GitHub Actions deploy runs **manually** from Actions tab (`hugo.yml`)
+- Reminder automation: a workflow notifies when `main` has commits not yet deployed
+- Deployed to: GitHub Pages after manual deploy run succeeds
+
+Notification behavior:
+- On each push to `main`, the reminder workflow checks deployment status
+- If there are undeployed commits, it opens or updates a reminder issue
+- Once daily, it re-checks and updates the same issue until deployed
 
 ## Image Management
 
@@ -73,11 +73,8 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 - **Partners**: Edit content through Pages CMS
 - **Only Johannes**: Can modify configuration, theme, and workflows
 - Protected by [.github/CODEOWNERS](./.github/CODEOWNERS)
-- Pages CMS does not enforce PR-only publishing by itself. For PR-only control, enable GitHub branch protection on `main` with:
-   - **Require a pull request before merging**
-   - **Require approvals**
-   - **Require review from Code Owners**
-   - Optional: **Restrict who can push to matching branches**
+- Contributors can push to `main`
+- Deploy is controlled manually by repository maintainers
 
 ## Maintenance
 

@@ -11,43 +11,41 @@ Pages CMS is the supported editor for this site.
 1. Open https://app.pagescms.org/
 2. Sign in with GitHub
 3. Open this repository
-4. **Switch to or create the `pages-edits` branch**
-5. Edit entries in **News**, **Partners**, or **Pilot Sites**
-6. Save your changes
-7. A pull request to `main` will be created or updated automatically
-8. Wait for the repository owner to review and merge
+4. Edit entries in **News**, **Partners**, or **Pilot Sites**
+5. Save your changes directly to `main`
 
 Notes:
-- All Pages CMS edits should go to the `pages-edits` branch
 - Uploaded images are stored in `static/images`
 - Image paths in content are written as `/images/...`
-- Further edits on `pages-edits` will update the same pull request
 
 ## How Publishing Works
 
-All changes are submitted through a pull request before they are published.
+All content changes are saved to `main` first.
 
-**The `pages-edits` branch workflow:**
-1. All Pages CMS edits go to the `pages-edits` branch
-2. A GitHub Action automatically creates or updates a pull request to `main`
-3. The repository owner reviews and approves the changes
-4. When merged to `main`, the Hugo build and deployment runs automatically
-5. The site is published to GitHub Pages within seconds
+**Manual deployment workflow:**
+1. Contributors push content changes to `main`
+2. A reminder workflow checks whether `main` is ahead of the latest deployment
+3. Repository owner runs manual deploy workflow when ready
+4. The site is published after that manual run succeeds
 
-The website is only published after approved changes are merged into `main`.
+Notification behavior:
+1. On each push to `main`, the reminder workflow opens or updates one reminder issue if deployment is pending
+2. Once daily, the same workflow re-checks and refreshes that reminder issue until deployment catches up
+3. When deployed SHA matches `main`, the reminder issue is closed automatically
+
+The website is only published after the manual deploy workflow runs.
 
 ## Repository Owner Setup (One-time)
 
-Required one-time setup for automatic pull requests:
+Required one-time setup:
 
-1. Create branch `pages-edits` from `main` in GitHub
-2. Ensure `.github/workflows/auto-pr.yml` is present on `main`
-3. Open **Settings -> Actions -> General** and set **Workflow permissions** to **Read and write**
+1. Ensure `.github/workflows/hugo.yml` and `.github/workflows/deployment-reminder.yml` are present on `main`
+2. Open **Settings -> Actions -> General** and set **Workflow permissions** to **Read and write**
 
 To further enforce safety:
-1. Keep GitHub branch protection enabled on `main` (require PR, approvals, code owner review)
-2. Delete or archive old test branches periodically
-3. Configure CODEOWNERS so your review is required on all PRs
+1. Review reminder issues and deploy when needed
+2. Keep CODEOWNERS for visibility on sensitive file changes
+3. Optionally keep branch rules if you want stricter controls later
 
 ## Content Areas
 
@@ -65,7 +63,7 @@ For images:
 
 ## Good to Know
 
-- Changes are published only after the repository owner approves and merges the pull request
+- Changes are published only after the repository owner runs the manual deploy workflow
 - Keep titles and summaries short and clear
 - If you are unsure where something belongs, ask the project owner before opening the pull request
 
