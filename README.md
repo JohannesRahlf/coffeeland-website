@@ -10,8 +10,11 @@ Partners use Pages CMS for editing content:
 
 - Open: https://app.pagescms.org/
 - Sign in with GitHub and open this repository
+- Switch to the `pages-edits` branch (or create it if it does not exist)
 - Edit content collections (News, Partners, Pilot Sites)
-- Submit changes for review when branch protection is enabled on `main`
+- Save changes to the `pages-edits` branch
+- A pull request to `main` is created or updated automatically
+- Wait for repository owner review and merge
 
 For step-by-step instructions on adding news, uploading images, and submitting changes for approval, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
