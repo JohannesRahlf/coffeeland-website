@@ -7,68 +7,86 @@ content:
     label: News
     type: collection
     path: content/news
+    description: "Project updates and announcements. Published on the homepage feed."
     view:
       fields: [title, date, author, draft]
     fields:
       - name: title
         type: string
         required: true
+        description: "Short title for the news post (e.g., 'Project Kick-off Meeting', 'New Funding Announced')"
       - name: date
         type: date
+        description: "Publication date (the date this news item was published)"
       - name: draft
         type: boolean
         default: false
+        description: "Check this box to save as draft without publishing. Uncheck when ready to publish."
       - name: author
         type: string
+        description: "Your name or organization (optional)"
       - name: summary
         type: text
+        description: "Brief summary (2-3 sentences) that appears in the news feed"
       - name: body
         label: Body
         type: rich-text
         options:
           format: markdown
+        description: "Full content of the news post. Use this for detailed announcements and updates."
 
   - name: partners
     label: Partners
     type: collection
     path: content/partners
+    description: "Partner organization profiles. Customize and update your organization's page."
     view:
       fields: [title]
     fields:
       - name: title
         type: string
         required: true
+        description: "Organization name"
       - name: featured_image
         type: image
+        description: "Logo or main image for your organization (displayed on partners page)"
       - name: header_image
         type: image
+        description: "Optional: Large banner image at the top of your profile page"
       - name: featured_image_class
         type: string
+        description: "Advanced: Image styling (e.g., 'contain', 'cover'). Leave blank for default."
       - name: body
         label: Body
         type: rich-text
         options:
           format: markdown
+        description: "Organization description, mission, and relevant information"
 
   - name: pilot_sites
     label: Pilot Sites
     type: collection
     path: content/pilot-sites
+    description: "Pilot site information and updates. Share details about your field research locations."
     view:
       fields: [title]
     fields:
       - name: title
         type: string
         required: true
+        description: "Name of the pilot site (e.g., 'Bale Region', 'Jimma Region')"
       - name: description
         type: text
+        description: "Short description of the pilot site (location, focus, activities)"
       - name: featured_image
         type: image
+        description: "Main image for the pilot site (landscape or site photo)"
       - name: body
         label: Body
         type: rich-text
         options:
           format: markdown
+        description: "Detailed information about the pilot site, research activities, and findings"
 
 settings:
   content:

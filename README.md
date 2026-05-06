@@ -10,7 +10,6 @@ Partners use Pages CMS for editing content:
 
 - Open: https://app.pagescms.org/johannesrahlf/coffeeland-website/main/
 - Sign in with GitHub and open this repository
-- Add images to `static/images/`
 - Edit content collections (News, Partners, Pilot Sites)
 - Save changes
 
