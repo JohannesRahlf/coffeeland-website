@@ -1,10 +1,17 @@
 ---
-title: "Madda Walabu University"
-featured_image: "images/MWU.png"
-header_image: "/images/CoffeeLand_Division_meetings_13_03_2026_8.png"
-featured_image_class: "cover bg-center"
+title: Madda Walabu University
+featured_image: images/MWU.png
+header_image: /images/CoffeeLand_Division_meetings_13_03_2026_8.png
+featured_image_class: cover bg-center
+summary: Madda Walabu University (MWU) is a public university founded in March
+  2005 by Council of Ministers, Regulations No. 236/2011, as an autonomous
+  higher education institution under the management of the Federal Ministry of
+  Education. It is strategically located between the Bale highlands and
+  lowlands, near the internationally recognized Bale Mountains National Park
+  (BMNP), one of Africa's key biodiversity hotspots. Bale is one of Ethiopia's
+  major agricultural production zones, especially known as an important wheat
+  belt, while also rich in forests, wildlife, and tourism resources.
 ---
-
 ## About Madda Walabu University
 
 Madda Walabu University (MWU) is a public university founded in March 2005 by Council of Ministers, Regulations No. 236/2011, as an autonomous higher education institution under the management of the Federal Ministry of Education. It is strategically located between the Bale highlands and lowlands, near the internationally recognized Bale Mountains National Park (BMNP), one of Africa's key biodiversity hotspots. Bale is one of Ethiopia's major agricultural production zones, especially known as an important wheat belt, while also rich in forests, wildlife, and tourism resources.
@@ -26,7 +33,7 @@ MWU has extensive experience in implementing research, development, and communit
 - **Name**: Madda Walabu University
 - **Location**: Bale Robe, Ethiopia
 - **Address**: P.O.Box 247 Madda Walabu
-- **Website**: https://newwebmwu.vercel.app
+- **Website**: [https://newwebmwu.vercel.app](https://newwebmwu.vercel.app)
 
 ## CoffeeLand Project Information
 
@@ -38,12 +45,15 @@ MWU has extensive experience in implementing research, development, and communit
 
 ## CoffeeLand Research Team
 
+
 | Full Name | Title | Role | Email |
-|-----------|-------|------|-------|
-| Addisu Assefa | Dr. | Project Coordinator, Co-Lead & researcher contributing to WP3, Project Management Team, Supervisor of PhD fellows (Dejene W. and Kefa F.) on WP-1 & WP-2 | assefaaddisu@gmail.com, addisu.assefa@mwu.edu.et |
-| Zewdineh Firdu | Dr. | Researcher contributing to WP-3 | firezew@gmail.com |
-| Habte Telila | Dr. | Researcher Contributing to WP-2 | habtetalila@yahoo.com, habte.telila@mwu.edu.et |
-| Moa Megersa Guta | Dr. | Supervision and Researcher contributing to WP-3 | moamegersa78@gmail.com |
-| Medhanit Bekele | Lecturer | Researcher contributing to WP-3 | Medilv2014@gmail.com |
-| Kefa Faye | PhD Fellow | Student & Researcher contributing to WP-1 & WP-2 | kefafeye8@gmail.com |
-| Dejene Worku | PhD Fellow | Student & Researcher contributing mainly to WP-2, and WP-1 & WP-3 | dworkud@gmail.com, dejene.worku@mwu.edu.et |
+| ---------------- | ---------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| Addisu Assefa | Dr. | Project Coordinator, Co-Lead & researcher contributing to WP3, Project Management Team, Supervisor of PhD fellows (Dejene W. and Kefa F.) on WP-1 & WP-2 | [assefaaddisu@gmail.com](mailto:assefaaddisu@gmail.com), [addisu.assefa@mwu.edu.et](mailto:addisu.assefa@mwu.edu.et) |
+| Zewdineh Firdu | Dr. | Researcher contributing to WP-3 | [firezew@gmail.com](mailto:firezew@gmail.com) |
+| Habte Telila | Dr. | Researcher Contributing to WP-2 | [habtetalila@yahoo.com](mailto:habtetalila@yahoo.com), [habte.telila@mwu.edu.et](mailto:habte.telila@mwu.edu.et) |
+| Moa Megersa Guta | Dr. | Supervision and Researcher contributing to WP-3 | [moamegersa78@gmail.com](mailto:moamegersa78@gmail.com) |
+| Medhanit Bekele | Lecturer | Researcher contributing to WP-3 | [Medilv2014@gmail.com](mailto:Medilv2014@gmail.com) |
+| Kefa Faye | PhD Fellow | Student & Researcher contributing to WP-1 & WP-2 | [kefafeye8@gmail.com](mailto:kefafeye8@gmail.com) |
+| Dejene Worku | PhD Fellow | Student & Researcher contributing mainly to WP-2, and WP-1 & WP-3 | [dworkud@gmail.com](mailto:dworkud@gmail.com), [dejene.worku@mwu.edu.et](mailto:dejene.worku@mwu.edu.et) |
+
+
