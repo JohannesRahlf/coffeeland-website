@@ -3,17 +3,9 @@ title: Madda Walabu University
 featured_image: images/MWU.png
 header_image: /images/CoffeeLand_Division_meetings_13_03_2026_8.png
 featured_image_class: cover bg-center
-summary: Madda Walabu University (MWU) is a public university founded in March
-  2005 by Council of Ministers, Regulations No. 236/2011, as an autonomous
-  higher education institution under the management of the Federal Ministry of
-  Education. It is strategically located between the Bale highlands and
-  lowlands, near the internationally recognized Bale Mountains National Park
-  (BMNP), one of Africa's key biodiversity hotspots. Bale is one of Ethiopia's
-  major agricultural production zones, especially known as an important wheat
-  belt, while also rich in forests, wildlife, and tourism resources.
+summary: Madda Walabu University (MWU) is a public university contributing
+  scientifically to the project and managing the pilot site Bale.
 ---
-## About Madda Walabu University
-
 Madda Walabu University (MWU) is a public university founded in March 2005 by Council of Ministers, Regulations No. 236/2011, as an autonomous higher education institution under the management of the Federal Ministry of Education. It is strategically located between the Bale highlands and lowlands, near the internationally recognized Bale Mountains National Park (BMNP), one of Africa's key biodiversity hotspots. Bale is one of Ethiopia's major agricultural production zones, especially known as an important wheat belt, while also rich in forests, wildlife, and tourism resources.
 
 MWU has three campuses: Robe Main Campus, Goba Health Campus, and Shashemene Campus. The mission of MWU is to produce competent, entrepreneurial, and employable graduates, and to provide need-based community services and problem-solving research outputs. The University is thriving, with a vision of becoming one of the top five "societal problem-solving" universities in Ethiopia by 2030, by advancing academic excellence, applied research, innovation, and impactful community engagement, with a motto of "Excellence through Diversity".
@@ -35,11 +27,7 @@ MWU has extensive experience in implementing research, development, and communit
 - **Address**: P.O.Box 247 Madda Walabu
 - **Website**: [https://newwebmwu.vercel.app](https://newwebmwu.vercel.app)
 
-## CoffeeLand Project Information
 
-**Project Name**: Optimizing Carbon, Soil Health, and Yield in Coffee–Forest Systems as Climate-Smart Land Management in Ethiopia (CoffeeLand Project)
-
-**Project Partner**: Norwegian Institute of Bioeconomy Research
 
 **Project Location**: Bale-Robe, Ethiopia
 
