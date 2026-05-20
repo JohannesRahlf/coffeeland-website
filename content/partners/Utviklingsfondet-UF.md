@@ -2,7 +2,7 @@
 title: "Utviklingsfondet (UF) — Development Fund of Norway"
 description: "Utviklingsfondet (UF) is a Norwegian civil society partner in CoffeeLand, leading stakeholder engagement and dissemination activities."
 featured_image: "images/UF.png"
-header_image: "images/CoffeeLand_Division_meetings_13_03_2026_11.png"
+header_image: "/images/CoffeeLand_Division_meetings_13_03_2026_8.png"
 featured_image_class: "cover bg-center"
 ---
 

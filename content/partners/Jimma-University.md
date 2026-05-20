@@ -1,7 +1,7 @@
 ---
 title: "Jimma University"
 featured_image: "images/UJ.png"
-header_image: "images/CoffeeLand_Division_meetings_13_03_2026_11.png"
+header_image: "/images/CoffeeLand_Division_meetings_13_03_2026_8.png"
 featured_image_class: "cover bg-center"
 ---
 

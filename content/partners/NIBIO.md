@@ -6,6 +6,7 @@ featured_image_class: contain bg-center
 ---
 NIBIO is the **project owner** and lead institution for CoffeeLand.
 
+<!--more-->
 
 
 #### NIBIO -- Norwegian Institute of Bioeconomy Research

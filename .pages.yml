@@ -56,6 +56,9 @@ content:
       - name: featured_image_class
         type: string
         description: "Advanced: Image styling (e.g., 'contain', 'cover'). Leave blank for default."
+      - name: summary
+        type: text
+        description: "Optional preview text shown on the partners listing card. If empty, Hugo uses automatic summary extraction."
       - name: body
         label: Body
         type: rich-text
@@ -81,6 +84,9 @@ content:
       - name: featured_image
         type: image
         description: "Main image for the pilot site (landscape or site photo)"
+      - name: summary
+        type: text
+        description: "Optional preview text shown on listing cards. If empty, Hugo uses automatic summary extraction."
       - name: body
         label: Body
         type: rich-text

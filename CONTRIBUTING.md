@@ -55,6 +55,11 @@ Use these collections in Pages CMS:
 - **Partners** for partner profile pages
 - **Pilot Sites** for pilot site pages
 
+Preview text on cards/lists:
+
+- Use the **summary** field in each entry to control preview text shown on listing cards
+- If **summary** is left empty, the site automatically uses the beginning of the page body as fallback preview text
+
 For images:
 
 - Upload images through the CMS

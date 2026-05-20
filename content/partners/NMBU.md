@@ -2,7 +2,7 @@
 title: "NMBU — Norwegian University of Life Sciences"
 description: "NMBU is a Norwegian research partner in CoffeeLand, contributing scientific expertise and co-financing."
 featured_image: "images/NMBU.png"
-header_image: "images/CoffeeLand_Division_meetings_13_03_2026_11.png"
+header_image: "/images/CoffeeLand_Division_meetings_13_03_2026_8.png"
 featured_image_class: "cover bg-center"
 ---
 
