@@ -1,2 +1,2 @@
 # Local-only overrides for Hugo development server
-baseURL = "http://localhost:1313/coffeeland-website/"
+baseURL = "http://localhost:1313/"

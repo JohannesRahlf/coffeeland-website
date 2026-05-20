@@ -2,7 +2,7 @@
 
 CoffeeLand is a Hugo-based website for sharing project updates, pilot site work, partner collaborations, and practical resources focused on sustainable coffee production.
 
-Live site: [https://johannesrahlf.github.io/coffeeland-website/](https://johannesrahlf.github.io/coffeeland-website/)
+Live site: [https://coffeeland.nibio.no/](https://coffeeland.nibio.no/)
 
 ## For Partners: Editing Content
 
@@ -46,7 +46,7 @@ For step-by-step instructions on adding news, uploading images, and submitting c
    ```bash
    hugo server -D
    ```
-4. Open: `http://localhost:1313/coffeeland-website/`
+4. Open: `http://localhost:1313/`
 
 ## Build & Deploy
 
