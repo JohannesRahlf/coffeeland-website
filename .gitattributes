@@ -13,3 +13,6 @@
 # Uncomment the line below and comment out the SVG line above to track SVG as text
 # *.svg diff=image
 
+# Pages CMS needs real image blobs for previews; do not store static site images as LFS pointers.
+static/images/** -filter -diff -merge -text
+
