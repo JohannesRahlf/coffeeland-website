@@ -1,12 +1,11 @@
 ---
-title: "Jimma University"
-featured_image: "images/UJ.png"
-header_image: "/images/CoffeeLand_Division_meetings_13_03_2026_8.png"
-featured_image_class: "cover bg-center"
+title: Jimma University
+featured_image: images/UJ.png
+header_image: /images/CoffeeLand_Division_meetings_13_03_2026_8.png
+featured_image_class: cover bg-center
+summary: Jimma University is one of Ethiopia's leading public universities,
+  contributing scientifically and managing the pilot site Jimma.
 ---
-
-## About Jimma University
-
 Jimma University is one of Ethiopia's leading public universities, recognized for its academic excellence, research strength, and enduring commitment to national development. Formed in the 1980s through the merger of the Jimma Institute of Health Sciences and the Jimma College of Agriculture, Jimma University is grounded in a strong legacy of excellence, innovation, and service. This foundation enabled the emergence of a comprehensive, multidisciplinary, and development-oriented university with a clear mission to address Ethiopia's evolving societal needs.
 
 Despite its location outside the capital, Jimma University has consistently maintained a standard of academic excellence that distinguishes it among institutions across the country. Over the decades, it has grown into a vibrant center of intellectual inquiry, innovation, and professional training, attracting scholars, researchers, educators, and thought leaders from across Ethiopia and beyond. Widely recognized among the nation's top public universities, Jimma University's reputation is built on the quality, relevance, and impact of its academic programs and research contributions.
@@ -27,8 +26,9 @@ As Jimma University continues through a transformative phase of institutional gr
 
 ## CoffeeLand Project Team
 
+
 | Name | Professional Title | Role in Project |
-|------|-------------------|----------|
+| ---------------- | ------------------------ | ------------------------------------------------------------------------------------------------------ |
 | Fenet Belay | PhD | JU CoffeeLand Project Coordinator, WP4 Leader (Socio-economics research group), Supervisor, Researcher |
 | Gezahegn Berecha | PhD, Professor | Work Package 3 Leader (Natural Science Research Group), Supervisor, Researcher |
 | Dereje Denu | PhD, Associate Professor | Supervisor, Researcher |
@@ -38,7 +38,9 @@ As Jimma University continues through a transformative phase of institutional gr
 | Jima Nego | MSc, Assistant Professor | PhD Fellow |
 | Segni Belissa | Lecturer | PhD Fellow |
 
+
 ## Key Contacts
 
-- **Communication Officer**: Dr. Wasihun Abate - washassen@gmail.com
-- **IT Person**: Ashenafi Adere - ashenafi.adere@ju.edu.et
+- **Communication Officer**: Dr. Wasihun Abate - [washassen@gmail.com](mailto:washassen@gmail.com)
+- **IT Person**: Ashenafi Adere - [ashenafi.adere@ju.edu.et](mailto:ashenafi.adere@ju.edu.et)
+
