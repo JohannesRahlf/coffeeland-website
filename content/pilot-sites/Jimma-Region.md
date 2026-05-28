@@ -1,12 +1,12 @@
 ---
-title: "Jimma Region"
-description: "Jimma Region is a CoffeeLand pilot site focused on semi-forest and garden coffee systems."
-featured_image: "/images/Hero2.png"
+title: Jimma-Ilubabor Coffee-Forest Systems
+description: Jimma Region is a CoffeeLand pilot site focused on semi-forest and
+  garden coffee systems.
+featured_image: /images/Hero2.png
 ---
-
 Jimma Region is one of the two primary CoffeeLand pilot sites in Ethiopia.
 
-<!--more-->
+
 
 - **Partner institution**: Jimma University, College of Agriculture & Veterinary Medicine
 - **Landscape type**: Semi-forest and garden coffee systems
@@ -23,3 +23,4 @@ At the Jimma site, the project team conducts:
 - Biomass and carbon stock measurements
 - Collection of ground-truth data for satellite image validation
 - Engagement with local farming communities
+
