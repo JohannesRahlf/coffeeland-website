@@ -1,10 +1,10 @@
 ---
-title: NIBIO xxx
+title: NIBIO- Norwegian Institute for Bioeconomy Research
 featured_image: /images/NIBIO.png
 header_image: images/Hero2.png
 featured_image_class: contain bg-center
 ---
-NIBIO is the **project owner** and lead institution for CoffeeLand.
+NIBIO is the Project Owner** and Lead Partner for CoffeeLand.
 
 
 
