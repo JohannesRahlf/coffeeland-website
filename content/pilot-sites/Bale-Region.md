@@ -4,14 +4,14 @@ description: Bale Eco-Region is a CoffeeLand Research site- Known for Forest and
   Semi-forest coffee-forest systems.
 featured_image: /images/Hero2.png
 ---
-Bale Region is one of the two primary CoffeeLand pilot sites in Ethiopia.
+Bale Region is one of the two primary CoffeeLand Research sites
 
 
 
 - **Partner institution**: Madda Walabu University
-- **Landscape type**: Wild and semi-wild coffee-forest systems
+- **Landscape type**: Forest and semi-forest coffee-forest systems
 - **Status**: Field plots under establishment (2026 Q2-Q3)
-- **Focus**: Carbon monitoring, agroforestry structure, biodiversity assessment, and remote sensing validation
+- Research **Focus**: Coffee-forest landscape monitoring, Extent and structure of coffee-forest systems, Biomass-Carbon monitoring, agroforestry structure, biodiversity assessment, and remote sensing applications
 
 ## Site Activities
 
