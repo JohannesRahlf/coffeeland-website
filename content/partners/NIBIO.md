@@ -4,16 +4,16 @@ featured_image: /images/NIBIO.png
 header_image: images/Hero2.png
 featured_image_class: contain bg-center
 ---
-NIBIO is the Project Owner** and Lead Partner for CoffeeLand.
+NIBIO is the Project Owner and Lead Partner in CoffeeLand.
 
 
 
 #### NIBIO -- Norwegian Institute of Bioeconomy Research
 
-- **Role**: Project owner and lead research institution
+- **Role**: Project owner and lead research partner
 - **Location**: Ås, Norway
 - **Website**: [www.nibio.no](https://www.nibio.no)
-- **Contribution**: Project management, AI/ML remote sensing, carbon mapping, and coordination
+- **Contribution**: Project management and coordination, AI/ML remote sensing, biomass/carbon mapping, 
 
 ## Institutional Information
 
@@ -34,12 +34,12 @@ As project owner, NIBIO is responsible for:
 
 ## Personnel
 
-- [Belachew Gizachew Zeleke](https://www.nibio.no/ansatte/belachew-gizachew-zeleke)
-- [Ana Aza](https://www.nibio.no/ansatte/ana-aza)
-- [Christian Mohr](https://www.nibio.no/ansatte/christian-mohr)
-- [Diress Alemu](https://www.nibio.no/ansatte/diress-alemu)
-- [Johannes Rahlf](https://www.nibio.no/ansatte/johannes-rahlf)
-- [Eva A. Haugen Johnson](https://www.nibio.no/ansatte/eva-a-haugen-johnson)
+- [Belachew Gizachew Zeleke (Project Manager)](https://www.nibio.no/ansatte/belachew-gizachew-zeleke)
+- [Ana Aza (Lead WP2)](https://www.nibio.no/ansatte/ana-aza)
+- [Christian Mohr (Researcher)](https://www.nibio.no/ansatte/christian-mohr)
+- [Diress Alemu (Researcher)](https://www.nibio.no/ansatte/diress-alemu)
+- [Johannes Rahlf (Researcher)](https://www.nibio.no/ansatte/johannes-rahlf)
+- [Eva A. Haugen Johnson (Project Finances)](https://www.nibio.no/ansatte/johannes-rahlf)
 
 ## Key Contacts
 
