@@ -11,16 +11,7 @@ Jimma Region is one of the two primary CoffeeLand pilot sites in Ethiopia.
 - **Partner institution**: Jimma University, College of Agriculture & Veterinary Medicine
 - **Landscape type**: Semi-forest and garden coffee systems
 - **Status**: Field plots under establishment (2026 Q2-Q3)
-- **Focus**: Shade tree diversity, soil health assessment, carbon stock measurement, and AI-based mapping validation
+- **Focus**: Shade tree diversity, soil health and coffee yield and quality, carbon stock measurement, and AI-based mapping validation, and 
 
-## Site Activities
 
-At the Jimma site, the project team conducts:
-
-- Establishment of permanent field monitoring plots
-- Shade tree diversity and density surveys
-- Soil sampling and health analysis
-- Biomass and carbon stock measurements
-- Collection of ground-truth data for satellite image validation
-- Engagement with local farming communities
 
