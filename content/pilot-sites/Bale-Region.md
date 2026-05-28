@@ -6,21 +6,10 @@ featured_image: /images/Hero2.png
 ---
 Bale Region is one of the two primary CoffeeLand Research sites
 
-
-
 - **Partner institution**: Madda Walabu University
 - **Landscape type**: Forest and semi-forest coffee-forest systems
 - **Status**: Field plots under establishment (2026 Q2-Q3)
 - Research **Focus**: Coffee-forest landscape monitoring, Extent and structure of coffee-forest systems, Biomass-Carbon monitoring, agroforestry structure, biodiversity assessment, and remote sensing applications
 
-## Site Activities
 
-At the Bale site, the project team conducts:
-
-- Establishment of permanent field monitoring plots
-- Shade tree diversity and density surveys
-- Soil sampling and health analysis
-- Biomass and carbon stock measurements
-- Collection of ground-truth data for satellite image validation
-- Engagement with local farming communities
 
