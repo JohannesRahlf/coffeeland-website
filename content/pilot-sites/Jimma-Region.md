@@ -1,7 +1,7 @@
 ---
 title: Jimma-Ilubabor Coffee-Forest Systems
-description: Jimma Region is a CoffeeLand pilot site focused on semi-forest and
-  garden coffee systems.
+description: Jimma-Ilubabor is a CoffeeLand Research site focused on Forest,
+  semi-forest, homegarden, and shaded plantation coffee forest systems.
 featured_image: /images/Hero2.png
 ---
 Jimma Region is one of the two primary CoffeeLand pilot sites in Ethiopia.
