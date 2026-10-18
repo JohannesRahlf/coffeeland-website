@@ -12,7 +12,7 @@ Pages CMS is the supported editor for this site. You do not need to know Git or 
 2. Open the personal link the project owner sent you. It looks like `https://app.pagescms.org/JohannesRahlf/coffeeland-website/edits-yourusername/`
 3. Sign in with GitHub
 4. Edit entries in **News**, **Partners**, or **Pilot Sites** and save
-5. That's it. Your changes are reviewed by the project owner before they go live. A review request is created automatically, usually within 15 minutes
+5. That's it. Your changes are reviewed by the project owner before they go live. A review request is created automatically, usually within a minute
 
 Notes:
 - Always use your personal link. Do not edit the `main` branch: it is protected and saving there will fail with "Changes must be made through a pull request"
@@ -53,7 +53,7 @@ scripts/add-contributor.sh <github-username>     # invites (Write), creates edit
 scripts/remove-contributor.sh <github-username>  # removes access and deletes their branch
 ```
 
-The workflow `.github/workflows/contributor-branches.yml` runs every 15 minutes from `main`. It opens pull requests for `edits-*` branches and resets a branch to `main` after its pull request is merged.
+The workflow `.github/workflows/contributor-branches.yml` runs when an `edits-*` branch is pushed, when `main` changes, and when a pull request is merged. It opens pull requests for `edits-*` branches and resets a branch to `main` after its pull request is merged. It has no schedule, so it keeps working after long idle periods.
 
 One-time setting: **Settings -> Actions -> General -> Workflow permissions -> Allow GitHub Actions to create and approve pull requests** must be enabled. The bot cannot satisfy the code owner review, so it cannot approve changes by itself.
 

@@ -1,13 +1,19 @@
 name: Manage contributor branches
 
-# Runs from main only (never from a contributor branch), so contributors cannot
-# change what it does. For each branch named edits-<github-user>:
+# For each branch named edits-<github-user>:
 #   - open a pull request into main when the branch has new commits
 #   - reset the branch to main once its changes are merged (or it has nothing unique)
+#
+# Event-driven (no schedule): scheduled workflows are paused by GitHub after 60 days
+# without repository activity, which would silently stop PRs from being created.
+# pull_request_target runs the version of this file on main and checks out no code.
 
 on:
-  schedule:
-    - cron: "*/15 * * * *"
+  push:
+    branches: ["edits-*", "main"]
+  pull_request_target:
+    types: [closed]
+    branches: ["main"]
   workflow_dispatch:
 
 permissions:
