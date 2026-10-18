@@ -82,6 +82,15 @@ For images:
 - Keep images small: at most 500 KB each, JPEG or WebP for photos, about 1600 px wide at most. Large files will be rejected in review
 - Stored images are served from `/images/...`
 
+## Using AI Assistants
+
+You may use an AI assistant (ChatGPT, Claude, etc.) to help write text, but:
+
+- You are responsible for the accuracy of everything you publish: check names, numbers, quotes, and links
+- Do not let tools edit the repository directly with your GitHub login unless you stay within your own branch and the content rules in `AGENTS.md`
+- Keep changes small. Bulk rewrites or edits outside `content/` and `static/images/` are flagged by an automatic check and will be rejected
+- Never paste confidential or personal data into an AI tool or into the site
+
 ## Good to Know
 
 - Changes are published only after the repository owner runs the manual deploy workflow
