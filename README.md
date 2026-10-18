@@ -62,22 +62,20 @@ Notification behavior:
 
 ## Image Management
 
-- Images use **Git LFS** to keep repository lean
-- **Auto-compression**: Images are automatically optimized on upload
-- **Spending protection**: Free tier (1GB/month) with hard limits set to prevent overages
-- Partners can upload full-resolution images — they're compressed automatically
+- Site images in `static/images/` are stored as regular files (not LFS) so Pages CMS can preview them
+- There is **no automatic compression**: keep images under 500 KB (see CONTRIBUTING.md)
 
 ## Access Control
 
 - **Partners**: Edit content through Pages CMS
 - **Only Johannes**: Can modify configuration, theme, and workflows
 - Protected by [.github/CODEOWNERS](./.github/CODEOWNERS)
-- Contributors can push to `main`
+- Contributors work on branches; `main` is protected and changes need a reviewed pull request
 - Deploy is controlled manually by repository maintainers
 
 ## Maintenance
 
-- Add new partners: In repo Settings → Collaborators, grant "Can pull, push, and maintain" access
+- Add new partners: In repo Settings → Collaborators, grant "Write" access (never Maintain or Admin)
 - Update Hugo: Change version in `.github/workflows/hugo.yml`
 - Git LFS status: `git lfs status`
 

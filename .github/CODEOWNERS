@@ -1,1 +1,11 @@
-* @johannesrahlf
+# Every change needs review from the owner.
+*                   @JohannesRahlf
+
+# Sensitive files: site config, templates, CMS config and automation.
+/.github/           @JohannesRahlf
+/config.toml        @JohannesRahlf
+/.pages.yml         @JohannesRahlf
+/layouts/           @JohannesRahlf
+/static/css/        @JohannesRahlf
+/.gitattributes     @JohannesRahlf
+/.gitmodules        @JohannesRahlf
