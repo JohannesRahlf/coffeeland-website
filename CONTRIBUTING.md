@@ -55,6 +55,8 @@ scripts/remove-contributor.sh <github-username>  # removes access and deletes th
 
 The workflow `.github/workflows/contributor-branches.yml` runs when an `edits-*` branch is pushed, when `main` changes, and when a pull request is merged. It opens pull requests for `edits-*` branches and resets a branch to `main` after its pull request is merged. It has no schedule, so it keeps working after long idle periods.
 
+The workflow `.github/workflows/pr-scope-check.yml` posts a `scope-check` status on every pull request (required to merge). For `edits-*` branches it fails if files outside `content/` and `static/images/` change, if an image is over 500 KB, or if more than 40 files change. It is a guardrail against mistakes and overeager tools, not a security boundary, so still read the diff.
+
 One-time setting: **Settings -> Actions -> General -> Workflow permissions -> Allow GitHub Actions to create and approve pull requests** must be enabled. The bot cannot satisfy the code owner review, so it cannot approve changes by itself.
 
 Access control:
