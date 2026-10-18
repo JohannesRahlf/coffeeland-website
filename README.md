@@ -67,7 +67,7 @@ Notification behavior:
 
 ## Access Control
 
-- **Partners**: Edit content through Pages CMS
+- **Partners**: Edit content through Pages CMS on a personal branch (`edits-<username>`), created with `scripts/add-contributor.sh`
 - **Only Johannes**: Can modify configuration, theme, and workflows
 - Protected by [.github/CODEOWNERS](./.github/CODEOWNERS)
 - Contributors work on branches; `main` is protected and changes need a reviewed pull request
