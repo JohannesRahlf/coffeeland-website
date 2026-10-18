@@ -19,7 +19,7 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 
 - Static site generator: Hugo (v0.160.0+)
 - Theme: Ananke
-- Image storage: Git LFS (automatic compression on upload)
+- Images: regular files in `static/images/`, optimized automatically on contributor branches
 - Hosting: GitHub Pages
 - CI/CD: GitHub Actions
 
@@ -31,7 +31,7 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 - `content/partners/_index.md`: Partners page
 - `content/resources/_index.md`: Resources page
 - `content/contact/_index.md`: Contact page
-- `static/images/`: Gallery images (Git LFS tracked)
+- `static/images/`: Gallery images
 
 
 ## Local Development
@@ -63,7 +63,7 @@ Notification behavior:
 ## Image Management
 
 - Site images in `static/images/` are stored as regular files (not LFS) so Pages CMS can preview them
-- There is **no automatic compression**: keep images under 500 KB (see CONTRIBUTING.md)
+- Images that contributors add on `edits-*` branches are resized (max 1600 px), recompressed and stripped of metadata (incl. GPS) automatically by `.github/workflows/optimize-images.yml`; phone photos are fine
 
 ## Access Control
 

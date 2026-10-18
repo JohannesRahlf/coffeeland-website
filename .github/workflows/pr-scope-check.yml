@@ -6,9 +6,11 @@ name: PR scope check
 #   - at most 40 files per pull request
 # Posts a commit status "scope-check" and a comment on the pull request.
 #
-# Runs from main (pull_request_target and workflow_run), checks out no pull request code,
-# and also covers pull requests opened by the automatic workflow, which would not
-# trigger pull_request_target themselves.
+# Runs from main (pull_request_target and workflow_run), checks out no pull request code.
+# The workflow_run trigger runs after "Optimize contributor images" (which itself runs after
+# "Manage contributor branches"), so images are shrunk before they are checked, and it covers
+# pull requests opened by the automatic workflow, which would not trigger
+# pull_request_target themselves.
 # This is a guardrail against mistakes and overeager tools, not a security boundary:
 # the owner's review is still required.
 
@@ -17,7 +19,7 @@ on:
     types: [opened, synchronize, reopened]
     branches: ["main"]
   workflow_run:
-    workflows: ["Manage contributor branches"]
+    workflows: ["Optimize contributor images"]
     types: [completed]
   workflow_dispatch:
 

@@ -55,7 +55,9 @@ scripts/remove-contributor.sh <github-username>  # removes access and deletes th
 
 The workflow `.github/workflows/contributor-branches.yml` runs when an `edits-*` branch is pushed, when `main` changes, and when a pull request is merged. It opens pull requests for `edits-*` branches and resets a branch to `main` after its pull request is merged. It has no schedule, so it keeps working after long idle periods.
 
-The workflow `.github/workflows/pr-scope-check.yml` posts a `scope-check` status on every pull request (required to merge). For `edits-*` branches it fails if files outside `content/` and `static/images/` change, if an image is over 500 KB, or if more than 40 files change. It is a guardrail against mistakes and overeager tools, not a security boundary, so still read the diff.
+The workflow `.github/workflows/optimize-images.yml` runs after the branch workflow, shrinks images that contributors add or change on `edits-*` branches (max 1600 px, quality 82, metadata removed) and commits the result to that branch. Merge pull requests with **Squash and merge**, so original large files never enter the history of `main`.
+
+The workflow `.github/workflows/pr-scope-check.yml` posts a `scope-check` status on every pull request (required to merge). For `edits-*` branches it fails if files outside `content/` and `static/images/` change, if an image is still over 500 KB after automatic optimization, or if more than 40 files change. It is a guardrail against mistakes and overeager tools, not a security boundary, so still read the diff.
 
 One-time setting: **Settings -> Actions -> General -> Workflow permissions -> Allow GitHub Actions to create and approve pull requests** must be enabled. The bot cannot satisfy the code owner review, so it cannot approve changes by itself.
 
@@ -81,7 +83,8 @@ For images:
 
 - Upload images through the CMS
 - Use short filenames with lowercase letters and hyphens when possible
-- Keep images small: at most 500 KB each, JPEG or WebP for photos, about 1600 px wide at most. Large files will be rejected in review
+- Photos straight from a phone are fine: images are resized automatically (to fit within 1600 px), recompressed, and stripped of metadata such as GPS location. This happens on your branch shortly after you save, and the file name stays the same
+- Use JPEG, PNG or WebP. iPhone HEIC files are not supported: share or export them as JPEG first
 - Stored images are served from `/images/...`
 
 ## Using AI Assistants
