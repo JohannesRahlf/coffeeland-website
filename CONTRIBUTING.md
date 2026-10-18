@@ -34,7 +34,7 @@ Content changes reach `main` only through reviewed pull requests.
 
 Notification behavior:
 1. On each push to `main`, the reminder workflow opens or updates one reminder issue if deployment is pending
-2. Once daily, the same workflow re-checks and refreshes that reminder issue until deployment catches up
+2. The reminder issue is closed by the next run of the workflow (next push to `main`, or run it manually from the Actions tab) once the deployed version matches `main`
 3. When deployed SHA matches `main`, the reminder issue is closed automatically
 
 The website is only published after the manual deploy workflow runs.

@@ -58,7 +58,7 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 Notification behavior:
 - On each push to `main`, the reminder workflow checks deployment status
 - If there are undeployed commits, it opens or updates a reminder issue
-- Once daily, it re-checks and updates the same issue until deployed
+- It has no daily schedule (GitHub pauses scheduled workflows after 60 days of inactivity); run it from the Actions tab to re-check
 
 ## Image Management
 
