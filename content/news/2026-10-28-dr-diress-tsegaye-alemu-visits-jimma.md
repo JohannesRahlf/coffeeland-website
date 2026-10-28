@@ -16,6 +16,7 @@ gallery:
     caption: Dr Diress inspects visits forests
   - image: /images/uploads_3000188_3002688181_processed_r-gDjOQiTJjAfjm8Il4cFZab1SxrntnnVGiTmEQEcF.jpg
   - image: /images/uploads_3000188_3002688181_processed_r-L6dEWjwsxYhkJAN2G2HFYjgZluLk05M0X8OJJjUQ.jpg
+featured_image: /images/uploads_3000188_3002688181_processed_r-StyU1T5H3lzOkDpUFB99Qy7zXfDmZpbpqUWOpoQO.jpg
 ---
 Following a one-week data analysis training for PhD students affiliated with the CoffeeLand Project, held from 14 to 20 September 2026, Dr Diress Tsegaye Alemu joined the Jimma CoffeeLand team for a field visit to coffee-growing areas in southwestern Ethiopia.
 
