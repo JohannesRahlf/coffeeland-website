@@ -1,7 +1,7 @@
 ---
 title: Dr Diress Tsegaye Alemu visits Jimma
 date: 2026-10-28
-draft: true
+draft: false
 author: Johannes Rahlf
 summary: Following a one-week data analysis training for PhD students affiliated
   with the CoffeeLand Project, held from 14 to 20 September 2026, Dr Diress
