@@ -126,6 +126,7 @@ jobs:
 
                 // A new site change just arrived: comment, so that everyone watching is notified
                 core.info(`event=${context.eventName}, pushed commits in payload=${(context.payload.commits || []).length}`);
+                core.info(JSON.stringify((context.payload.commits || []).map(c => ({ id: c.id.slice(0, 7), added: c.added, modified: c.modified, removed: c.removed }))));
                 if (context.eventName === 'push') {
                   const pushed = (context.payload.commits || []).filter(c =>
                     [...(c.added || []), ...(c.modified || []), ...(c.removed || [])].some(f => !ignored(f)));
