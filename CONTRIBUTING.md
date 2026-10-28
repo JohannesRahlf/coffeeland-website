@@ -21,7 +21,7 @@ Notes:
 ## How Publishing Works
 
 1. Contributors save changes in Pages CMS (each save is a commit on `main`)
-2. A reminder issue ("Pending deployment on main") lists the saved changes since the last deployment: who saved what, and which files changed
+2. A reminder issue ("Pending deployment on main") lists the saved changes since the last deployment: who saved what, and which files changed. Each new change adds a comment, so everyone watching the repository's issues gets an email
 3. The repository owner reads that list (and reverts a commit on `main` if something is wrong)
 4. The repository owner runs the **Build and Deploy Hugo Site** workflow from the Actions tab
 5. The site is published after that run succeeds
