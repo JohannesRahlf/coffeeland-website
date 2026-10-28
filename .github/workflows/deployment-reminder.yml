@@ -1,5 +1,11 @@
 name: Notify Pending Deployment
 
+# Keeps one open issue, "Pending deployment on main", while the site has changes that are
+# not deployed yet. Changes that do not affect the site (README, docs, workflows, scripts,
+# Pages CMS config) are ignored. When a new site change is pushed while the issue is open,
+# a comment is added: comments (unlike edits to the issue text) send notifications to
+# everyone watching the repository's issues. The issue closes when a deploy has caught up.
+
 on:
   push:
     branches: ["main"]
@@ -27,52 +33,54 @@ jobs:
             const title = 'Pending deployment on main';
             const label = 'deployment-reminder';
 
-            // Get current HEAD of main
+            // Files that do not change the published site
+            const ignored = (f) => /^(README\.md|CONTRIBUTING\.md|AGENTS\.md|CLAUDE\.md|LICENSE|\.gitignore|\.gitattributes|\.pages\.yml|\.github\/|scripts\/)/.test(f);
+            const isContent = (f) => f.startsWith('content/') || f.startsWith('static/images/');
+            // Authors masked: Pages CMS may use an email address as the name
+            const mask = (n) => (n && n.includes('@') ? n.split('@')[0] + '@...' : (n || 'unknown'));
+
+            // Current HEAD of main
             const branch = await github.rest.repos.getBranch({ owner, repo, branch: 'main' });
             const mainSha = branch.data.commit.sha;
             const mainUrl = branch.data.commit.url;
 
-            // Get latest successful manual deploy run (hugo.yml workflow_dispatch)
+            // Latest successful manual deploy run (hugo.yml, workflow_dispatch)
             const runs = await github.rest.actions.listWorkflowRuns({
-              owner,
-              repo,
-              workflow_id: 'hugo.yml',
-              branch: 'main',
-              event: 'workflow_dispatch',
-              status: 'completed',
-              per_page: 30,
+              owner, repo, workflow_id: 'hugo.yml', branch: 'main',
+              event: 'workflow_dispatch', status: 'completed', per_page: 30,
             });
-
             const deployedRun = runs.data.workflow_runs.find(r => r.conclusion === 'success');
             const deployedSha = deployedRun ? deployedRun.head_sha : null;
             const deployedRunUrl = deployedRun ? deployedRun.html_url : null;
 
-            const pending = deployedSha !== mainSha;
-
-            // What is waiting to be deployed (authors masked: Pages CMS may use an email address as the name)
-            const mask = (n) => (n && n.includes('@') ? n.split('@')[0] + '@...' : (n || 'unknown'));
-            const summarize = (c) => ({
-              sha: c.sha.slice(0, 7),
-              who: mask(c.commit.author && c.commit.author.name),
-              msg: c.commit.message.split('\n')[0],
-            });
-            let changes = [];
+            // Commits and files since the last deploy that affect the site
+            let commits = [];
             let files = [];
-            if (pending) {
+            if (deployedSha !== mainSha) {
               try {
+                let list;
                 if (deployedSha) {
                   const cmp = await github.rest.repos.compareCommits({ owner, repo, base: deployedSha, head: mainSha, per_page: 100 });
-                  changes = cmp.data.commits.map(summarize);
-                  files = (cmp.data.files || []).map(f => f.filename);
+                  list = cmp.data.commits;
+                  files = (cmp.data.files || []).map(f => f.filename).filter(f => !ignored(f));
                 } else {
-                  const list = await github.rest.repos.listCommits({ owner, repo, sha: 'main', per_page: 20 });
-                  changes = list.data.map(summarize);
+                  list = (await github.rest.repos.listCommits({ owner, repo, sha: 'main', per_page: 20 })).data;
                 }
+                for (const c of list) {
+                  const full = await github.rest.repos.getCommit({ owner, repo, ref: c.sha });
+                  const touched = (full.data.files || []).map(f => f.filename).filter(f => !ignored(f));
+                  if (touched.length) {
+                    commits.push({ sha: c.sha.slice(0, 7), who: mask(c.commit.author && c.commit.author.name), msg: c.commit.message.split('\n')[0] });
+                    if (!deployedSha) files.push(...touched);
+                  }
+                }
+                files = [...new Set(files)];
               } catch (e) {
                 core.warning(`Could not list pending changes: ${e.message}`);
               }
             }
-            const isContent = (f) => f.startsWith('content/') || f.startsWith('static/images/');
+            // Pending only if the net result still differs from the deployed site
+            const pending = deployedSha ? files.length > 0 : commits.length > 0;
 
             // Ensure label exists (best effort)
             try {
@@ -86,69 +94,63 @@ jobs:
             }
 
             const existingIssues = await github.rest.issues.listForRepo({
-              owner,
-              repo,
-              state: 'open',
-              labels: label,
-              per_page: 20,
+              owner, repo, state: 'open', labels: label, per_page: 20,
             });
-
             const existing = existingIssues.data.find(i => i.title === title);
 
             if (pending) {
               const body = [
-                'There are commits on `main` that are not yet deployed to GitHub Pages.',
+                'There are changes on `main` that are not yet deployed to the website. (Commits that only change documentation or automation are not listed.)',
                 '',
                 `- Current main SHA: \`${mainSha}\``,
                 `- Latest deployed SHA: ${deployedSha ? `\`${deployedSha}\`` : 'none yet'}`,
                 `- Main commit API URL: ${mainUrl}`,
                 `- Latest successful deploy run: ${deployedRunUrl ? deployedRunUrl : 'none yet'}`,
                 '',
-                `### Waiting to be deployed (${changes.length}${changes.length >= 100 ? '+' : ''} commits)`,
-                ...changes.slice(0, 50).map(c => `- \`${c.sha}\` ${c.who}: ${c.msg}`),
-                ...(files.length ? [
-                  '',
-                  `### Changed files (${files.length}; a warning sign marks anything that is not content or an image)`,
-                  ...files.slice(0, 50).map(f => `- ${isContent(f) ? '' : '\u26a0\ufe0f '}\`${f}\``),
-                ] : []),
+                `### Waiting to be deployed (${commits.length}${commits.length >= 100 ? '+' : ''} commits)`,
+                ...commits.slice(0, 50).map(c => `- \`${c.sha}\` ${c.who}: ${c.msg}`),
                 '',
-                'Review the changes above (revert a commit on `main` if something is wrong), then run the manual deploy workflow at:',
+                `### Changed files (${files.length}; a warning sign marks anything that is not content or an image)`,
+                ...files.slice(0, 50).map(f => `- ${isContent(f) ? '' : '⚠️ '}\`${f}\``),
+                '',
+                'Review the changes above (revert a commit on `main` if something is wrong; posts with `draft: true` are not published), then run the manual deploy workflow at:',
                 `https://github.com/${owner}/${repo}/actions/workflows/hugo.yml`,
               ].join('\n');
 
               if (!existing) {
-                const created = await github.rest.issues.create({
-                  owner,
-                  repo,
-                  title,
-                  body,
-                  labels: [label],
-                });
+                const created = await github.rest.issues.create({ owner, repo, title, body, labels: [label] });
                 core.info(`Created reminder issue #${created.data.number}`);
               } else {
-                await github.rest.issues.update({
-                  owner,
-                  repo,
-                  issue_number: existing.number,
-                  body,
-                });
+                await github.rest.issues.update({ owner, repo, issue_number: existing.number, body });
                 core.info(`Updated reminder issue #${existing.number}`);
+
+                // A new site change just arrived: comment, so that everyone watching is notified
+                if (context.eventName === 'push') {
+                  const pushed = (context.payload.commits || []).filter(c =>
+                    [...(c.added || []), ...(c.modified || []), ...(c.removed || [])].some(f => !ignored(f)));
+                  if (pushed.length) {
+                    const pushedFiles = [...new Set(pushed.flatMap(c => [...(c.added || []), ...(c.modified || []), ...(c.removed || [])]).filter(f => !ignored(f)))];
+                    const lines = [
+                      `**New change waiting to be deployed** (${commits.length} commit${commits.length === 1 ? '' : 's'} waiting in total)`,
+                      '',
+                      ...pushed.slice(0, 10).map(c => `- \`${c.id.slice(0, 7)}\` ${mask(c.author && c.author.name)}: ${c.message.split('\n')[0]}`),
+                      '',
+                      'Files: ' + pushedFiles.slice(0, 10).map(f => `\`${f}\``).join(', '),
+                      '',
+                      `Deploy: https://github.com/${owner}/${repo}/actions/workflows/hugo.yml`,
+                    ];
+                    await github.rest.issues.createComment({ owner, repo, issue_number: existing.number, body: lines.join('\n') });
+                    core.info('Commented on the reminder issue');
+                  }
+                }
               }
             } else if (existing) {
               await github.rest.issues.createComment({
-                owner,
-                repo,
-                issue_number: existing.number,
-                body: 'Deployment is up to date with `main`. Closing this reminder.',
+                owner, repo, issue_number: existing.number,
+                body: 'No site changes are waiting for deployment. Closing this reminder.',
               });
-
-              await github.rest.issues.update({
-                owner,
-                repo,
-                issue_number: existing.number,
-                state: 'closed',
-              });
+              await github.rest.issues.update({ owner, repo, issue_number: existing.number, state: 'closed' });
               core.info(`Closed reminder issue #${existing.number}`);
             } else {
-              core.info('Deployment is up to date; no reminder needed.');
+              core.info('No site changes waiting for deployment; no reminder needed.');
             }
