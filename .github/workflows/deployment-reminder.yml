@@ -46,6 +46,31 @@ jobs:
 
             const pending = deployedSha !== mainSha;
 
+            // What is waiting to be deployed (authors masked: Pages CMS may use an email address as the name)
+            const mask = (n) => (n && n.includes('@') ? n.split('@')[0] + '@...' : (n || 'unknown'));
+            const summarize = (c) => ({
+              sha: c.sha.slice(0, 7),
+              who: mask(c.commit.author && c.commit.author.name),
+              msg: c.commit.message.split('\n')[0],
+            });
+            let changes = [];
+            let files = [];
+            if (pending) {
+              try {
+                if (deployedSha) {
+                  const cmp = await github.rest.repos.compareCommits({ owner, repo, base: deployedSha, head: mainSha, per_page: 100 });
+                  changes = cmp.data.commits.map(summarize);
+                  files = (cmp.data.files || []).map(f => f.filename);
+                } else {
+                  const list = await github.rest.repos.listCommits({ owner, repo, sha: 'main', per_page: 20 });
+                  changes = list.data.map(summarize);
+                }
+              } catch (e) {
+                core.warning(`Could not list pending changes: ${e.message}`);
+              }
+            }
+            const isContent = (f) => f.startsWith('content/') || f.startsWith('static/images/');
+
             // Ensure label exists (best effort)
             try {
               await github.rest.issues.getLabel({ owner, repo, name: label });
@@ -76,7 +101,15 @@ jobs:
                 `- Main commit API URL: ${mainUrl}`,
                 `- Latest successful deploy run: ${deployedRunUrl ? deployedRunUrl : 'none yet'}`,
                 '',
-                'Run the manual deploy workflow at:',
+                `### Waiting to be deployed (${changes.length}${changes.length >= 100 ? '+' : ''} commits)`,
+                ...changes.slice(0, 50).map(c => `- \`${c.sha}\` ${c.who}: ${c.msg}`),
+                ...(files.length ? [
+                  '',
+                  `### Changed files (${files.length}; a warning sign marks anything that is not content or an image)`,
+                  ...files.slice(0, 50).map(f => `- ${isContent(f) ? '' : '\u26a0\ufe0f '}\`${f}\``),
+                ] : []),
+                '',
+                'Review the changes above (revert a commit on `main` if something is wrong), then run the manual deploy workflow at:',
                 `https://github.com/${owner}/${repo}/actions/workflows/hugo.yml`,
               ].join('\n');
 

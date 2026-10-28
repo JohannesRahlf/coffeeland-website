@@ -1,0 +1,42 @@
+name: TMP test optimize script
+on:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  t:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - name: Make test images
+        run: |
+          pip install -q pillow
+          mkdir -p /tmp/imgs
+          python3 - <<'PY'
+          from PIL import Image, ImageDraw, ImageFilter
+          import random, os
+          random.seed(1)
+          w,h=4000,3000
+          im=Image.new("RGB",(w,h)); d=ImageDraw.Draw(im)
+          for y in range(0,h,4): d.rectangle([0,y,w,y+4],fill=(30+y*80//h,90+y*60//h,60+(y%97)))
+          for i in range(900):
+              x,y=random.randrange(w),random.randrange(h); r=random.randrange(20,160)
+              d.ellipse([x,y,x+r,y+r],fill=tuple(random.randrange(256) for _ in range(3)))
+          im=im.filter(ImageFilter.GaussianBlur(2))
+          ex=Image.Exif(); gps=ex.get_ifd(0x8825); gps[1]="N"; gps[2]=(59.0,39.0,0.0); gps[3]="E"; gps[4]=(10.0,45.0,0.0)
+          im.save("/tmp/imgs/phone.jpg","JPEG",quality=95,exif=ex)
+          im.resize((800,600)).save("/tmp/imgs/small.jpg","JPEG",quality=80)
+          im.save("/tmp/imgs/photo.png")
+          for f in os.listdir("/tmp/imgs"): print(f, os.path.getsize("/tmp/imgs/"+f))
+          PY
+      - name: Run script
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq imagemagick
+          cp /tmp/imgs/small.jpg /tmp/small.before
+          bash scripts/optimize-images.sh /tmp/imgs 2000
+          ls -l /tmp/imgs
+          identify /tmp/imgs/*.jpg /tmp/imgs/*.png
+          echo "GPS after: [$(identify -format '%[EXIF:GPSLatitude]' /tmp/imgs/phone.jpg)]"
+          cmp /tmp/small.before /tmp/imgs/small.jpg && echo "small.jpg untouched"

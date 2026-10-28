@@ -34,6 +34,12 @@ jobs:
           hugo-version: '0.160.0'
           extended: true
 
+      - name: Optimize images (build copy only, nothing is committed)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq imagemagick
+          bash scripts/optimize-images.sh static/images 2000
+
       - name: Hugo module tidy
         run: hugo mod tidy
 
