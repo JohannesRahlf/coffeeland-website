@@ -125,6 +125,7 @@ jobs:
                 core.info(`Updated reminder issue #${existing.number}`);
 
                 // A new site change just arrived: comment, so that everyone watching is notified
+                core.info(`event=${context.eventName}, pushed commits in payload=${(context.payload.commits || []).length}`);
                 if (context.eventName === 'push') {
                   const pushed = (context.payload.commits || []).filter(c =>
                     [...(c.added || []), ...(c.modified || []), ...(c.removed || [])].some(f => !ignored(f)));
