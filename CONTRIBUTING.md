@@ -8,18 +8,18 @@ You do not need to install any software or use the command line.
 
 Pages CMS is the supported editor for this site. You do not need to know Git or GitHub.
 
-1. You receive two emails: an invitation from Pages CMS (use it to sign in; no GitHub account needed) and a message from the project owner with your personal link
-2. Open your personal link and save it as a bookmark. It looks like `https://app.pagescms.org/JohannesRahlf/coffeeland-website/edits-yourname/`
+1. You receive an invitation email from Pages CMS. Use it to sign in (no GitHub account needed)
+2. Open the editor link and save it as a bookmark: `https://app.pagescms.org/JohannesRahlf/coffeeland-website/edits-team/`
 3. Sign in if asked
 4. Edit entries in **News**, **Partners**, or **Pilot Sites** and save
 5. That's it. Your changes are reviewed by the project owner before they go live. A review request is created automatically, usually within a minute
 
 Notes:
-- Always use your personal link. Do not edit the `main` branch: it is protected and saving there will fail with "Changes must be made through a pull request"
+- Always use the editor link above (it is also in the footer of the website). Do not edit the `main` branch: it is protected and saving there will fail with "Changes must be made through a pull request"
 - Only edit content (News, Partners, Pilot Sites). Changes to other files will be rejected
 - Uploaded images are stored in `static/images`
 - Image paths in content are written as `/images/...`
-- After your changes are approved, your branch is reset to the current version of the site. Keep using the same link
+- After your changes are approved, your branch is reset to the current version of the site. Keep using the same link; everyone shares it, so you may see other people's recent changes
 
 ## How Publishing Works
 
@@ -46,14 +46,9 @@ Required one-time setup:
 1. Ensure `.github/workflows/hugo.yml` and `.github/workflows/deployment-reminder.yml` are present on `main`
 2. Open **Settings -> Actions -> General** and set **Workflow permissions** to **Read repository contents** (each workflow declares the permissions it needs)
 
-Adding and removing contributors (owner, requires `gh` signed in as admin):
+Adding and removing contributors (owner): invite or remove the person's email address in the Pages CMS interface (**Collaborators**) and send them the editor link above. Everyone edits the shared branch `edits-team`, and one pull request collects all changes until you merge it. Each commit carries the author's name, so you can see who changed what. Pages CMS collaborators can edit content and media only: they cannot change `.pages.yml`, workflows, or other settings, and they need no GitHub account. For someone who works with a GitHub account, add `--github <username>` to also invite or remove them as a repository collaborator (Write).
 
-```
-scripts/add-contributor.sh "<name>"      # creates the branch edits-<name>, prints the personal link and a welcome message
-scripts/remove-contributor.sh "<name>"   # deletes their branch (refuses while a pull request is open; --force overrides)
-```
-
-Then invite or remove the person's email address in the Pages CMS interface (**Collaborators**). Pages CMS collaborators can edit content and media only: they cannot change `.pages.yml`, workflows, or other settings, and they need no GitHub account. For someone who works with a GitHub account, add `--github <username>` to also invite or remove them as a repository collaborator (Write).
+Optional: for separate pull requests per person, `scripts/add-contributor.sh "<name>"` creates a personal branch `edits-<name>` and prints that person's link and a welcome message; `scripts/remove-contributor.sh "<name>"` deletes it.
 
 The workflow `.github/workflows/contributor-branches.yml` runs when an `edits-*` branch is pushed, when `main` changes, and when a pull request is merged. It opens pull requests for `edits-*` branches and resets a branch to `main` after its pull request is merged. It has no schedule, so it keeps working after long idle periods.
 
