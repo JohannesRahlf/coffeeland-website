@@ -147,3 +147,10 @@ body main > div.w-70-ns {
   white-space: nowrap;
   border: 0;
 }
+
+/* Pictures list under a page's text */
+.page-gallery img {
+  width: 100%;
+  height: auto;
+  display: block;
+}

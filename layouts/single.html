@@ -21,6 +21,19 @@
       </header>
       <div class="partners-intro nested-copy-line-height lh-copy f4 nested-links {{ $.Param "text_color" | compare.Default "mid-gray" }}">
       {{- .Content -}}
+      {{- with .Params.gallery -}}
+        <div class="page-gallery flex flex-wrap mt4">
+          {{- range . -}}
+            {{- $item := . -}}
+            {{- with $item.image -}}
+              <figure class="w-100 w-50-l ma0 pa2">
+                <img src="{{ strings.Trim . "/" | urls.RelURL }}" alt="{{ $item.caption }}">
+                {{- with $item.caption }}<figcaption class="f6 mt2">{{ . }}</figcaption>{{ end -}}
+              </figure>
+            {{- end -}}
+          {{- end -}}
+        </div>
+      {{- end -}}
       {{- partials.Include "tags.html" . -}}
       {{ if .Site.Config.Services.Disqus.Shortname }}
       <div class="mt6 instapaper_ignoref">

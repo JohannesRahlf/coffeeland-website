@@ -30,12 +30,29 @@ content:
       - name: summary
         type: text
         description: "Brief summary (2-3 sentences) that appears in the news feed"
+      - name: featured_image
+        label: Main picture
+        type: image
+        description: "Optional. Shown at the top of the post and next to it in the news feed on the home page. Click to choose or upload a picture."
       - name: body
         label: Body
         type: rich-text
         options:
           format: markdown
         description: "Full content of the news post. Use this for detailed announcements and updates."
+      - name: gallery
+        label: Pictures
+        type: object
+        list: true
+        description: "Pictures shown below the text. Click Add, then choose or upload a picture and write a short caption."
+        fields:
+          - name: image
+            label: Picture
+            type: image
+          - name: caption
+            label: Caption
+            type: string
+            description: "Short description of what the picture shows"
 
   - name: partners
     label: Partners
@@ -67,6 +84,19 @@ content:
         options:
           format: markdown
         description: "Organization description, mission, and relevant information"
+      - name: gallery
+        label: Pictures
+        type: object
+        list: true
+        description: "Pictures shown below the text. Click Add, then choose or upload a picture and write a short caption."
+        fields:
+          - name: image
+            label: Picture
+            type: image
+          - name: caption
+            label: Caption
+            type: string
+            description: "Short description of what the picture shows"
 
   - name: pilot_sites
     label: Pilot Sites
@@ -95,6 +125,19 @@ content:
         options:
           format: markdown
         description: "Detailed information about the pilot site, research activities, and findings"
+      - name: gallery
+        label: Pictures
+        type: object
+        list: true
+        description: "Pictures shown below the text. Click Add, then choose or upload a picture and write a short caption."
+        fields:
+          - name: image
+            label: Picture
+            type: image
+          - name: caption
+            label: Caption
+            type: string
+            description: "Short description of what the picture shows"
 
 settings:
   content:
