@@ -3,17 +3,17 @@ title: NIBIO- Norwegian Institute for Bioeconomy Research
 featured_image: /images/NIBIO.png
 header_image: images/Hero2.png
 featured_image_class: contain bg-center
+summary: |+
+  NIBIO is the Project Owner and Lead Partner in CoffeeLand.
 ---
 NIBIO is the Project Owner and Lead Partner in CoffeeLand.
-
-
 
 ## Overview
 
 - **Role**: Project owner and lead research partner
 - **Location**: Ås, Norway
 - **Website**: [www.nibio.no](https://www.nibio.no)
-- **Contribution**: Project management and coordination, AI/ML remote sensing, biomass/carbon mapping, 
+- **Contribution**: Project management and coordination, AI/ML remote sensing, biomass/carbon mapping,
 
 ## Institutional Information
 
