@@ -8,7 +8,7 @@ Live site: [https://coffeeland.nibio.no/](https://coffeeland.nibio.no/)
 
 Partners use Pages CMS for editing content:
 
-- Open the editor link in the website footer (it ends in `/edits-team/`); do not use `main`
+- Open the editor link in the website footer (or the Pages CMS invitation email)
 - Sign in with the Pages CMS invitation email (no GitHub account needed)
 - Edit content collections (News, Partners, Pilot Sites)
 - Save changes
@@ -63,19 +63,19 @@ Notification behavior:
 ## Image Management
 
 - Site images in `static/images/` are stored as regular files (not LFS) so Pages CMS can preview them
-- Images that contributors add on `edits-*` branches are resized (max 1600 px), recompressed and stripped of metadata (incl. GPS) automatically by `.github/workflows/optimize-images.yml`; phone photos are fine
+- The deploy workflow shrinks images in the build copy only (`scripts/optimize-images.sh`: max 2000 px, recompressed, metadata removed); originals stay unchanged in the repository, so phone photos are fine
 
 ## Access Control
 
-- **Partners**: Edit content through Pages CMS on the shared branch `edits-team` (one link for everyone); invited by email in Pages CMS → Collaborators
+- **Partners**: Edit content through Pages CMS directly on `main`, invited by email in Pages CMS → Collaborators; saves are published only when the owner runs the deploy
 - **Only Johannes**: Can modify configuration, theme, and workflows
 - Protected by [.github/CODEOWNERS](./.github/CODEOWNERS)
-- Contributors work on branches; `main` is protected and changes need a reviewed pull request
+- Pages CMS collaborators save directly to `main` (the Pages CMS app is not blocked by branch protection); the manual deploy is the approval step, reviewed via the reminder issue
 - Deploy is controlled manually by repository maintainers
 
 ## Maintenance
 
-- Add new contributors: invite their email in Pages CMS → Collaborators and send them the editor link. Optional separate branch per person: `scripts/add-contributor.sh "<name>"`. GitHub accounts only if needed (`--github <username>`, Write access, never Maintain or Admin)
+- Add new contributors: invite their email in Pages CMS → Collaborators and send them the editor link (no GitHub account needed)
 - Update Hugo: Change version in `.github/workflows/hugo.yml`
 - Git LFS status: `git lfs status`
 
