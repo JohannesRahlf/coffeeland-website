@@ -58,7 +58,7 @@ git revert <sha> && git push
 **3. Deploy.**
 1. Open https://github.com/johannesrahlf/coffeeland-website/actions/workflows/hugo.yml
 2. **Run workflow** (branch `main`) and confirm. From a terminal: `gh workflow run hugo.yml`
-3. The `github-pages` environment has required reviewers. If the run waits, open it and click **Review deployments**, then approve
+3. Running the workflow is the approval: there is no second confirmation. The `github-pages` environment only allows deployments from `main`
 4. After about two minutes the site is live. The reminder issue closes on the next run of the reminder workflow (next push to `main`, or run it manually)
 
 **Images:** the deploy build shrinks images in its own copy (`scripts/optimize-images.sh`: fit within 2000 px, recompress, remove metadata such as GPS location). Originals stay unchanged in the repository, so photos with GPS data remain in the public git history.
@@ -69,12 +69,11 @@ git revert <sha> && git push
 
 The maintainer tasks are: watch the reminder issue, review and deploy (above), and invite contributors. Another person can take these over:
 
-1. **GitHub account with access:** add them under **Settings → Collaborators** with the **Write** role. That is enough to start the deploy workflow and to manage collaborators in Pages CMS. Use **Admin** only for someone who should also change settings or protection rules
-2. **Deployment approval:** add them as a reviewer in **Settings → Environments → github-pages → Required reviewers**. At the moment only `JohannesRahlf` is a reviewer, so nobody else can approve a deploy until this is done (self-review is allowed)
-3. **Notifications:** they set **Watch → Custom → Issues** on the repository
-4. **Pages CMS:** they sign in with GitHub and open the repository; they then see **Collaborators** in the sidebar if they have repository access
-5. **Backup:** keep at least two people with Admin access, so the repository is never left without an administrator
-6. Update the maintainer name in [.github/CODEOWNERS](./.github/CODEOWNERS) if the owner changes, and in the instructions for AI tools in [AGENTS.md](./AGENTS.md)
+1. **GitHub account with access:** add them under **Settings → Collaborators** with the **Write** role. That is enough to start the deploy workflow (anyone with Write access can deploy) and to manage collaborators in Pages CMS. Use **Admin** only for someone who should also change settings or protection rules
+2. **Notifications:** they set **Watch → Custom → Issues** on the repository
+3. **Pages CMS:** they sign in with GitHub and open the repository; they then see **Collaborators** in the sidebar if they have repository access
+4. **Backup:** keep at least two people with Admin access, so the repository is never left without an administrator
+5. Update the maintainer name in [.github/CODEOWNERS](./.github/CODEOWNERS) if the owner changes, and in the instructions for AI tools in [AGENTS.md](./AGENTS.md)
 
 ## Image Management
 
