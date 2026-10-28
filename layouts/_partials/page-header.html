@@ -9,7 +9,13 @@
 {{ end }}
 
 {{ if $featured_image }}
-  {{ $featured_image_class := .Params.featured_image_class | compare.Default "cover bg-center" }}
+  {{/* featured_image_class styles the logo on listing cards; a header_image has its own class */}}
+  {{ $featured_image_class := "" }}
+  {{ if .Params.header_image }}
+    {{ $featured_image_class = .Params.header_image_class | compare.Default "cover bg-center" }}
+  {{ else }}
+    {{ $featured_image_class = .Params.featured_image_class | compare.Default "cover bg-center" }}
+  {{ end }}
   {{ $cover_dimming_class := .Params.cover_dimming_class | compare.Default "bg-black-60" }}
   <header class="{{ $featured_image_class }}" style="background-image: url('{{ $featured_image }}');">
     <div class="{{ $cover_dimming_class }}">

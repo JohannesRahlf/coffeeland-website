@@ -8,10 +8,14 @@
     {{- $post_class = printf "page-%s" .ContentBaseName -}}
   {{- end -}}
 
+  {{/* The banner already shows the title when the page has a banner image: keep the h1 for screen readers only */}}
+  {{- $banner := .Params.header_image | compare.Default (partials.Include "func/GetFeaturedImage.html" . | string | strings.TrimSpace) -}}
+  {{- $titleInBanner := and $banner (not .Params.omit_header_text) -}}
+
   <div class="flex-l mt2">
     <article class="{{ $post_class }} partners-page cf pv5 ph3 ph4-ns w-100">
       <header class="partners-intro">
-        <h1 class="f1">
+        <h1 class="f1{{ if $titleInBanner }} sr-only{{ end }}">
           {{ .Title }}
         </h1>
       </header>
