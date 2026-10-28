@@ -19,6 +19,11 @@ permissions:
   actions: read
   issues: write
 
+# One run at a time: two quick saves must not create two reminder issues
+concurrency:
+  group: deployment-reminder
+  cancel-in-progress: false
+
 jobs:
   remind:
     runs-on: ubuntu-latest
@@ -125,17 +130,22 @@ jobs:
                 core.info(`Updated reminder issue #${existing.number}`);
 
                 // A new site change just arrived: comment, so that everyone watching is notified
-                core.info(`event=${context.eventName}, pushed commits in payload=${(context.payload.commits || []).length}`);
-                core.info(JSON.stringify((context.payload.commits || []).map(c => ({ id: c.id.slice(0, 7), added: c.added, modified: c.modified, removed: c.removed }))));
                 if (context.eventName === 'push') {
-                  const pushed = (context.payload.commits || []).filter(c =>
-                    [...(c.added || []), ...(c.modified || []), ...(c.removed || [])].some(f => !ignored(f)));
+                  // The push payload has no file lists, so look the files up per commit
+                  const pushed = [];
+                  for (const pc of (context.payload.commits || []).slice(0, 20)) {
+                    const full = await github.rest.repos.getCommit({ owner, repo, ref: pc.id });
+                    const touched = (full.data.files || []).map(f => f.filename).filter(f => !ignored(f));
+                    if (touched.length) {
+                      pushed.push({ id: pc.id.slice(0, 7), who: mask(pc.author && pc.author.name), msg: pc.message.split('\n')[0], files: touched });
+                    }
+                  }
                   if (pushed.length) {
-                    const pushedFiles = [...new Set(pushed.flatMap(c => [...(c.added || []), ...(c.modified || []), ...(c.removed || [])]).filter(f => !ignored(f)))];
+                    const pushedFiles = [...new Set(pushed.flatMap(c => c.files))];
                     const lines = [
                       `**New change waiting to be deployed** (${commits.length} commit${commits.length === 1 ? '' : 's'} waiting in total)`,
                       '',
-                      ...pushed.slice(0, 10).map(c => `- \`${c.id.slice(0, 7)}\` ${mask(c.author && c.author.name)}: ${c.message.split('\n')[0]}`),
+                      ...pushed.slice(0, 10).map(c => `- \`${c.id}\` ${c.who}: ${c.msg}`),
                       '',
                       'Files: ' + pushedFiles.slice(0, 10).map(f => `\`${f}\``).join(', '),
                       '',
