@@ -26,7 +26,7 @@ Notes:
 4. The repository owner runs the **Build and Deploy Hugo Site** workflow from the Actions tab
 5. The site is published after that run succeeds
 
-The reminder workflow runs on every push to `main` and can also be started manually from the Actions tab. It has no daily schedule, because GitHub pauses scheduled workflows after 60 days without repository activity.
+The reminder workflow runs on every push to `main` and whenever a deploy finishes (so the issue closes after a successful deploy). It can also be started manually from the Actions tab. It has no daily schedule, because GitHub pauses scheduled workflows after 60 days without repository activity.
 
 The website is only published after the manual deploy workflow runs.
 
