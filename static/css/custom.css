@@ -154,3 +154,141 @@ body main > div.w-70-ns {
   height: auto;
   display: block;
 }
+
+/* ===== Look and feel: coffee-forest palette ===== */
+:root {
+  --cl-green: #3f6a2e;
+  --cl-green-dark: #2f5222;
+  --cl-brown: #2a1f18;
+  --cl-text: #3b3029;
+  --cl-cream: #f7f1e8;
+  --cl-card: #fffdf9;
+  --cl-line: #e4d8c6;
+  --cl-accent: #c8792b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cl-cream) !important;
+  color: var(--cl-text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Keyboard focus is clearly visible */
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--cl-accent);
+  outline-offset: 2px;
+}
+
+/* Banner: darker, warmer overlay and readable title over photos */
+header > div.bg-black-60 {
+  background: linear-gradient(180deg, rgba(42, 31, 24, 0.7), rgba(42, 31, 24, 0.5)) !important;
+}
+
+header .f1-l,
+header .f2 {
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.55);
+}
+
+nav a:hover {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+/* Text: comfortable size, line length and spacing */
+.partners-page .partners-intro p,
+.partners-page .partners-intro li {
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.partners-page .partners-intro p,
+.partners-page .partners-intro ul,
+.partners-page .partners-intro ol {
+  max-width: 62rem;
+}
+
+.partners-page .partners-intro h2 {
+  color: var(--cl-green-dark);
+  border-bottom: 2px solid var(--cl-line);
+  padding-bottom: 0.35rem;
+  margin-top: 2.25rem;
+}
+
+.partners-page .partners-intro h3 {
+  color: var(--cl-brown);
+}
+
+.partners-page .partners-intro blockquote {
+  border-left: 4px solid var(--cl-accent);
+  margin-left: 0;
+  padding-left: 1rem;
+  color: var(--cl-text);
+}
+
+.partners-page .partners-intro img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+/* Links */
+main .nested-links a {
+  color: var(--cl-green);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+main .nested-links a:hover {
+  color: var(--cl-green-dark);
+}
+
+/* Cards (news feed, partners, pilot sites) */
+.partners-page .partners-card article {
+  background: var(--cl-card);
+  border: 1px solid var(--cl-line) !important;
+  border-radius: 0.75rem;
+  box-shadow: 0 1px 3px rgba(42, 31, 24, 0.06);
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.partners-page .partners-card article:hover {
+  box-shadow: 0 8px 22px rgba(42, 31, 24, 0.12);
+  transform: translateY(-1px);
+}
+
+.partners-page .partners-card h1 a {
+  color: var(--cl-brown);
+}
+
+.partners-page .partners-card a.ba {
+  background: var(--cl-green) !important;
+  border-color: transparent !important;
+  color: #ffffff !important;
+  text-decoration: none;
+}
+
+.partners-page .partners-card a.ba:hover {
+  background: var(--cl-green-dark) !important;
+}
+
+/* Footer */
+footer {
+  background: var(--cl-card) !important;
+  border-top: 4px solid var(--cl-green);
+}
+
+/* Pictures list: soft rounded corners */
+.page-gallery img {
+  border-radius: 0.5rem;
+}
+
+.page-gallery figcaption {
+  color: var(--cl-text);
+}
