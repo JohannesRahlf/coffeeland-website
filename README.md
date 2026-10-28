@@ -37,28 +37,44 @@ For step-by-step instructions on adding news, uploading images, and submitting c
 ## Local Development
 
 1. Install Hugo (extended, v0.160.0 or newer) and Go.
-2. Install Git LFS:
-   ```bash
-   git lfs install
-   git lfs pull
-   ```
-3. Run local server:
+2. Run local server:
    ```bash
    hugo server -D
    ```
-4. Open: `http://localhost:1313/`
+3. Open: `http://localhost:1313/`
 
-## Build & Deploy
+## Publishing Runbook (maintainers)
 
-- Local build: `hugo --minify`
-- Production deploy: GitHub Actions deploy runs **manually** from Actions tab (`hugo.yml`)
-- Reminder automation: a workflow notifies when `main` has commits not yet deployed
-- Deployed to: GitHub Pages after manual deploy run succeeds
+Contributors save in Pages CMS, and every save is a commit on `main`. **Nothing is public until a maintainer deploys.** The deploy is the approval step.
 
-Notification behavior:
-- On each push to `main`, the reminder workflow checks deployment status
-- If there are undeployed commits, it opens or updates a reminder issue
-- It has no daily schedule (GitHub pauses scheduled workflows after 60 days of inactivity); run it from the Actions tab to re-check
+**1. Get notified.** The workflow `deployment-reminder.yml` runs on every push to `main` and keeps one issue open, "Pending deployment on main". It lists the commits since the last deployment (author and message) and the changed files; files that are not content or images are marked with a warning sign. GitHub emails you when that issue is created and when it is closed. To receive these emails, open the repository, then **Watch → Custom → Issues**. The issue text is edited on later saves, which does not send another email, so open the issue from time to time. The workflow has no daily schedule (GitHub pauses scheduled workflows after 60 days of inactivity); run it from the Actions tab to re-check.
+
+**2. Review.** Read the issue. If a commit is wrong, undo it on `main`:
+```bash
+git revert <sha> && git push
+```
+(or use **Revert** on the commit's page on GitHub).
+
+**3. Deploy.**
+1. Open https://github.com/johannesrahlf/coffeeland-website/actions/workflows/hugo.yml
+2. **Run workflow** (branch `main`) and confirm. From a terminal: `gh workflow run hugo.yml`
+3. The `github-pages` environment has required reviewers. If the run waits, open it and click **Review deployments**, then approve
+4. After about two minutes the site is live. The reminder issue closes on the next run of the reminder workflow (next push to `main`, or run it manually)
+
+**Images:** the deploy build shrinks images in its own copy (`scripts/optimize-images.sh`: fit within 2000 px, recompress, remove metadata such as GPS location). Originals stay unchanged in the repository, so photos with GPS data remain in the public git history.
+
+**Contributors:** invite or remove people in Pages CMS → **Collaborators** (email address, no GitHub account needed). They can only edit content and media, not `.pages.yml`, workflows or settings.
+
+## Handing Over Maintenance
+
+The maintainer tasks are: watch the reminder issue, review and deploy (above), and invite contributors. Another person can take these over:
+
+1. **GitHub account with access:** add them under **Settings → Collaborators** with the **Write** role. That is enough to start the deploy workflow and to manage collaborators in Pages CMS. Use **Admin** only for someone who should also change settings or protection rules
+2. **Deployment approval:** add them as a reviewer in **Settings → Environments → github-pages → Required reviewers**. At the moment only `JohannesRahlf` is a reviewer, so nobody else can approve a deploy until this is done (self-review is allowed)
+3. **Notifications:** they set **Watch → Custom → Issues** on the repository
+4. **Pages CMS:** they sign in with GitHub and open the repository; they then see **Collaborators** in the sidebar if they have repository access
+5. **Backup:** keep at least two people with Admin access, so the repository is never left without an administrator
+6. Update the maintainer name in [.github/CODEOWNERS](./.github/CODEOWNERS) if the owner changes, and in the instructions for AI tools in [AGENTS.md](./AGENTS.md)
 
 ## Image Management
 
@@ -67,23 +83,21 @@ Notification behavior:
 
 ## Access Control
 
-- **Partners**: Edit content through Pages CMS directly on `main`, invited by email in Pages CMS → Collaborators; saves are published only when the owner runs the deploy
-- **Only Johannes**: Can modify configuration, theme, and workflows
+- **Partners**: edit content through Pages CMS directly on `main`, invited by email in Pages CMS → Collaborators; saves are published only when a maintainer runs the deploy
+- **Maintainers**: can change configuration, theme and workflows
 - Protected by [.github/CODEOWNERS](./.github/CODEOWNERS)
 - Pages CMS collaborators save directly to `main` (the Pages CMS app is not blocked by branch protection); the manual deploy is the approval step, reviewed via the reminder issue
-- Deploy is controlled manually by repository maintainers
+- Give GitHub collaborators the **Write** role at most (never Maintain or Admin, except for maintainers)
 
 ## Maintenance
 
 - Add new contributors: invite their email in Pages CMS → Collaborators and send them the editor link (no GitHub account needed)
-- Update Hugo: Change version in `.github/workflows/hugo.yml`
-- Git LFS status: `git lfs status`
+- Update Hugo: change the version in `.github/workflows/hugo.yml`
 
 ## Troubleshooting
 
 **Images not showing?**
-- Ensure Git LFS is installed locally: `git lfs install`
-- Pull LFS files: `git lfs pull`
+- Images live in `static/images/` as normal files (not Git LFS); check the file name and that the path in the content starts with `/images/`
 
 **Build failing?**
 - Check Hugo version: `hugo version` (must be v0.160.0+)
@@ -91,5 +105,5 @@ Notification behavior:
 
 **Want to edit locally?**
 - Clone repo: `git clone https://github.com/johannesrahlf/coffeeland-website`
-- Install Git LFS, run `hugo server -D`
+- Run `hugo server -D`
 - Edit files, test locally, push when ready
