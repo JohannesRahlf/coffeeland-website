@@ -8,8 +8,8 @@ Live site: [https://coffeeland.nibio.no/](https://coffeeland.nibio.no/)
 
 Partners use Pages CMS for editing content:
 
-- Open: https://app.pagescms.org/johannesrahlf/coffeeland-website/main/
-- Sign in with GitHub and open this repository
+- Open the personal link the project owner sent you (it ends in `/edits-yourname/`); do not use `main`
+- Sign in with the Pages CMS invitation email (no GitHub account needed)
 - Edit content collections (News, Partners, Pilot Sites)
 - Save changes
 
@@ -67,7 +67,7 @@ Notification behavior:
 
 ## Access Control
 
-- **Partners**: Edit content through Pages CMS on a personal branch (`edits-<username>`), created with `scripts/add-contributor.sh`
+- **Partners**: Edit content through Pages CMS on a personal branch (`edits-<name>`), created with `scripts/add-contributor.sh`; invited by email in Pages CMS → Collaborators
 - **Only Johannes**: Can modify configuration, theme, and workflows
 - Protected by [.github/CODEOWNERS](./.github/CODEOWNERS)
 - Contributors work on branches; `main` is protected and changes need a reviewed pull request
@@ -75,7 +75,7 @@ Notification behavior:
 
 ## Maintenance
 
-- Add new partners: In repo Settings → Collaborators, grant "Write" access (never Maintain or Admin)
+- Add new contributors: run `scripts/add-contributor.sh "<name>"`, then invite their email in Pages CMS → Collaborators and send them the printed message (GitHub accounts only if needed: `--github <username>`, Write access, never Maintain or Admin)
 - Update Hugo: Change version in `.github/workflows/hugo.yml`
 - Git LFS status: `git lfs status`
 

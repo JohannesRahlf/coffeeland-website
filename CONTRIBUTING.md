@@ -8,9 +8,9 @@ You do not need to install any software or use the command line.
 
 Pages CMS is the supported editor for this site. You do not need to know Git or GitHub.
 
-1. Accept the invitation to the repository (you receive an email from GitHub; you need a free GitHub account)
-2. Open the personal link the project owner sent you. It looks like `https://app.pagescms.org/JohannesRahlf/coffeeland-website/edits-yourusername/`
-3. Sign in with GitHub
+1. You receive two emails: an invitation from Pages CMS (use it to sign in; no GitHub account needed) and a message from the project owner with your personal link
+2. Open your personal link and save it as a bookmark. It looks like `https://app.pagescms.org/JohannesRahlf/coffeeland-website/edits-yourname/`
+3. Sign in if asked
 4. Edit entries in **News**, **Partners**, or **Pilot Sites** and save
 5. That's it. Your changes are reviewed by the project owner before they go live. A review request is created automatically, usually within a minute
 
@@ -49,9 +49,11 @@ Required one-time setup:
 Adding and removing contributors (owner, requires `gh` signed in as admin):
 
 ```
-scripts/add-contributor.sh <github-username>     # invites (Write), creates edits-<username>, prints their link
-scripts/remove-contributor.sh <github-username>  # removes access and deletes their branch
+scripts/add-contributor.sh "<name>"      # creates the branch edits-<name>, prints the personal link and a welcome message
+scripts/remove-contributor.sh "<name>"   # deletes their branch (refuses while a pull request is open; --force overrides)
 ```
+
+Then invite or remove the person's email address in the Pages CMS interface (**Collaborators**). Pages CMS collaborators can edit content and media only: they cannot change `.pages.yml`, workflows, or other settings, and they need no GitHub account. For someone who works with a GitHub account, add `--github <username>` to also invite or remove them as a repository collaborator (Write).
 
 The workflow `.github/workflows/contributor-branches.yml` runs when an `edits-*` branch is pushed, when `main` changes, and when a pull request is merged. It opens pull requests for `edits-*` branches and resets a branch to `main` after its pull request is merged. It has no schedule, so it keeps working after long idle periods.
 
