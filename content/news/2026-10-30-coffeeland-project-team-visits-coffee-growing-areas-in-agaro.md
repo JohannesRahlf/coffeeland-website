@@ -8,6 +8,9 @@ summary: Following a one-week data analysis training program for PhD students
   Diress Tsegaye Alemu joined the Jimma CoffeeLand Project team for a field
   visit to coffee-growing areas in the Agaro region of southwestern Ethiopia.
 featured_image: /images/dsc0593.jpg
+gallery:
+  - image: /images/3696825187090801579000312356011106856727818n.jpg
+    caption: "project field area with all the landscape "
 ---
 Following a one-week data analysis training program for PhD students affiliated with the CoffeeLand Project, held from 14–20 September 2026, Dr. Diress Tsegaye Alemu joined the Jimma CoffeeLand Project team for a field visit to coffee-growing areas in the Agaro region of southwestern Ethiopia.
 
