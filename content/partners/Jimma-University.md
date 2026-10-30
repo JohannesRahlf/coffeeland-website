@@ -1,7 +1,7 @@
 ---
 title: Jimma University
 featured_image: images/UJ.png
-header_image: /images/3696501777090807012333103340622451308008201n.jpg
+header_image: /images/jit.jpg
 featured_image_class: cover bg-center
 summary: Jimma University is one of Ethiopia's leading public universities,
   contributing scientifically and managing the pilot site Jimma.
